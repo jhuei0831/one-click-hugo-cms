@@ -1,7 +1,7 @@
 baseURL = 'https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app'
 languageCode = 'zh-TW'
 title = 'Jhuei Yummy'
-theme = 'cactus'
+theme = 'ananke'
 
 [params]
   colortheme = "white" 
