@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jhuei Yummy</title>
-    <link>dancing-arithmetic-054798.netlify.app/</link>
-    <description>Recent content on Jhuei Yummy</description>
+    <title>Posts on Jhuei Yummy</title>
+    <link>dancing-arithmetic-054798.netlify.app/posts/</link>
+    <description>Recent content in Posts on Jhuei Yummy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 13 Apr 2020 17:53:07 +0800</lastBuildDate><atom:link href="dancing-arithmetic-054798.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Apr 2020 17:53:07 +0800</lastBuildDate><atom:link href="dancing-arithmetic-054798.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ckeditor &#43; Htmlpurifier allow attribute</title>
       <link>dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</link>
@@ -18,15 +18,6 @@ Here is the document.
 For example, I want to purify the html below.
 &amp;lt;div class=&amp;#34;bootstrap-tabs&amp;#34; data-tab-set-title=&amp;#34;Program Introduction&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; If you use the simple purifier like this,
 function xss_filter($content){ $purifier = new HTMLPurifier($config); $cleanContent = $purifier-&amp;gt;purify($content); return $cleanContent; } You will get the output below,</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>dancing-arithmetic-054798.netlify.app/about/</link>
-      <pubDate>Wed, 24 Aug 2016 17:51:42 +0000</pubDate>
-      
-      <guid>dancing-arithmetic-054798.netlify.app/about/</guid>
-      <description>Github: monkeyWzr</description>
     </item>
     
   </channel>
