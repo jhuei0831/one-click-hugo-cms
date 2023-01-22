@@ -1,42 +1,45 @@
 baseURL = 'https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app'
 languageCode = 'zh-TW'
 title = 'Jhuei Yummy'
-theme = 'ananke'
+theme = 'DoIt'
 
 [params]
-  colortheme = "white" 
-  description = "Want to learn fried chicken? Teach you!"
-  tagsOverview = true
-  mainSectionTitle = "Posts"
+  # DoIt theme version
+  version = "0.2.X"
 
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
 
-[[menu.main]]
-name = "Posts"
-url = "/posts"
-weight = 2
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
 
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 3
-
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 4
-
-[[params.social]]
-  name = "github"
-  link = "https://github.com/monkeyWzr"
-
-[[params.social]]
-  name = "email"
-  link = "monkeywzr@gmail.com" # no need for "mailto:" at the start
-
-[[params.social]]
-  name = "linkedin"
-  link = "https://www.linkedin.com/in/monkeywzr/"
