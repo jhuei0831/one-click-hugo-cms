@@ -1,0 +1,42 @@
+baseURL = 'https://jhuei.com/'
+languageCode = 'zh-TW'
+title = 'Jhuei Yummy'
+theme = 'cactus'
+
+[params]
+  colortheme = "white" 
+  description = "Want to learn fried chicken? Teach you!"
+  tagsOverview = true
+  mainSectionTitle = "Posts"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
+
+[[params.social]]
+  name = "github"
+  link = "https://github.com/monkeyWzr"
+
+[[params.social]]
+  name = "email"
+  link = "monkeywzr@gmail.com" # no need for "mailto:" at the start
+
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/monkeywzr/"
