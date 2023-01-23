@@ -1,21 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</loc>
-    <lastmod>2020-04-13T17:53:07+08:00</lastmod>
-  </url><url>
-    <loc>dancing-arithmetic-054798.netlify.app/</loc>
-    <lastmod>2020-04-13T17:53:07+08:00</lastmod>
-  </url><url>
-    <loc>dancing-arithmetic-054798.netlify.app/posts/</loc>
-    <lastmod>2020-04-13T17:53:07+08:00</lastmod>
-  </url><url>
-    <loc>dancing-arithmetic-054798.netlify.app/about/</loc>
-    <lastmod>2016-08-24T17:51:42+00:00</lastmod>
-  </url><url>
-    <loc>dancing-arithmetic-054798.netlify.app/categories/</loc>
-  </url><url>
-    <loc>dancing-arithmetic-054798.netlify.app/tags/</loc>
-  </url>
-</urlset>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod></url><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod></url><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/2023-01-22-test-title/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod></url><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</loc><lastmod>2020-04-13T17:53:07&#43;08:00</lastmod></url><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/</loc><lastmod>2020-04-13T17:53:07&#43;08:00</lastmod></url><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/about/</loc><lastmod>2016-08-24T17:51:42&#43;00:00</lastmod></url><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/categories/</loc></url><url>
+            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/tags/</loc></url></urlset>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Jhuei Yummy</title>
+    <link>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/</link>
+    <description>Recent content in Blogs on Jhuei Yummy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 22 Jan 2023 10:21:06 +0000</lastBuildDate><atom:link href="https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test title</title>
+      <link>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/2023-01-22-test-title/</link>
+      <pubDate>Sun, 22 Jan 2023 10:21:06 +0000</pubDate>
+      
+      <guid>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/2023-01-22-test-title/</guid>
+      <description>haha</description>
+    </item>
+    
+  </channel>
+</rss>

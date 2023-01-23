@@ -1,24 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Jhuei Yummy</title>
-    <link>dancing-arithmetic-054798.netlify.app/posts/</link>
-    <description>Recent content in Posts on Jhuei Yummy</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-TW</language>
-    <lastBuildDate>Mon, 13 Apr 2020 17:53:07 +0800</lastBuildDate><atom:link href="dancing-arithmetic-054798.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ckeditor &#43; Htmlpurifier allow attribute</title>
-      <link>dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</link>
-      <pubDate>Mon, 13 Apr 2020 17:53:07 +0800</pubDate>
-      
-      <guid>dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</guid>
-      <description>I created a page manager in the backstage, and it edit by the ckeditor. Also, I use Htmlpurifier to defense the xss injection. But Htmlpurifier will block the attribute like Bootstrap tabs plugins. So the way I used to allow attribute while using Htmlpurifier.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Jhuei Yummy</title>
+        <link>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/</link>
+        <description>All Posts | Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Mon, 13 Apr 2020 17:53:07 &#43;0800</lastBuildDate><atom:link href="https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Ckeditor &#43; Htmlpurifier allow attribute</title>
+    <link>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</link>
+    <pubDate>Mon, 13 Apr 2020 17:53:07 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</guid>
+    <description><![CDATA[I created a page manager in the backstage, and it edit by the ckeditor. Also, I use Htmlpurifier to defense the xss injection. But Htmlpurifier will block the attribute like Bootstrap tabs plugins. So the way I used to allow attribute while using Htmlpurifier.
 Here is the document.
 For example, I want to purify the html below.
-&amp;lt;div class=&amp;#34;bootstrap-tabs&amp;#34; data-tab-set-title=&amp;#34;Program Introduction&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; If you use the simple purifier like this,
-function xss_filter($content){ $purifier = new HTMLPurifier($config); $cleanContent = $purifier-&amp;gt;purify($content); return $cleanContent; } You will get the output below,</description>
-    </item>
-    
-  </channel>
+&lt;div class=&#34;bootstrap-tabs&#34; data-tab-set-title=&#34;Program Introduction&#34;&gt;&lt;/div&gt; If you use the simple purifier like this,
+function xss_filter($content){ $purifier = new HTMLPurifier($config); $cleanContent = $purifier-&gt;purify($content); return $cleanContent; } You will get the output below,]]></description>
+</item></channel>
 </rss>

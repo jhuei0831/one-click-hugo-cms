@@ -1,359 +1,163 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
-  <link rel="preload" href="/dancing-arithmetic-054798.netlify.app/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/dancing-arithmetic-054798.netlify.app/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/dancing-arithmetic-054798.netlify.app/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/dancing-arithmetic-054798.netlify.app/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
-  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Ckeditor &#43; Htmlpurifier allow attribute | Jhuei Yummy</title>
-  <link rel = 'canonical' href = 'dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/'>
-  <meta name="description" content="Want to learn fried chicken? Teach you!">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Ckeditor &#43; Htmlpurifier allow attribute" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Ckeditor &#43; Htmlpurifier allow attribute - Jhuei Yummy</title><meta name="Description" content=""><meta property="og:title" content="Ckeditor &#43; Htmlpurifier allow attribute" />
 <meta property="og:description" content="I created a page manager in the backstage, and it edit by the ckeditor. Also, I use Htmlpurifier to defense the xss injection. But Htmlpurifier will block the attribute like Bootstrap tabs plugins. So the way I used to allow attribute while using Htmlpurifier.
 Here is the document.
 For example, I want to purify the html below.
 &lt;div class=&#34;bootstrap-tabs&#34; data-tab-set-title=&#34;Program Introduction&#34;&gt;&lt;/div&gt; If you use the simple purifier like this,
 function xss_filter($content){ $purifier = new HTMLPurifier($config); $cleanContent = $purifier-&gt;purify($content); return $cleanContent; } You will get the output below," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-13T17:53:07+08:00" />
 <meta property="article:modified_time" content="2020-04-13T17:53:07+08:00" />
 
-
-  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ckeditor &#43; Htmlpurifier allow attribute"/>
 <meta name="twitter:description" content="I created a page manager in the backstage, and it edit by the ckeditor. Also, I use Htmlpurifier to defense the xss injection. But Htmlpurifier will block the attribute like Bootstrap tabs plugins. So the way I used to allow attribute while using Htmlpurifier.
 Here is the document.
 For example, I want to purify the html below.
 &lt;div class=&#34;bootstrap-tabs&#34; data-tab-set-title=&#34;Program Introduction&#34;&gt;&lt;/div&gt; If you use the simple purifier like this,
 function xss_filter($content){ $purifier = new HTMLPurifier($config); $cleanContent = $purifier-&gt;purify($content); return $cleanContent; } You will get the output below,"/>
+<meta name="application-name" content="Jhuei Yummy">
+<meta name="apple-mobile-web-app-title" content="Jhuei Yummy">
 
-  
-  
-    
-  
-  
-  <link rel="stylesheet" href="/dancing-arithmetic-054798.netlify.app/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Ckeditor + Htmlpurifier allow attribute",
+        "inLanguage": "zh-TW",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app\/posts\/ckeditor-htmlpurifier-allow-attribute\/"
+        },"genre": "posts","wordcount":  119 ,
+        "url": "https:\/\/63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app\/posts\/ckeditor-htmlpurifier-allow-attribute\/","datePublished": "2020-04-13T17:53:07+08:00","dateModified": "2020-04-13T17:53:07+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Author"},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
 
-  
-  
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-
-  
-<link rel="icon" type="image/png" href="dancing-arithmetic-054798.netlify.app/images/favicon.ico" />
-
-  
-  
-</head>
-
-<body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
-
-  <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/">Home</a></li>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/posts">Posts</a></li>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/tags">Tags</a></li>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/about">About</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" dancing-arithmetic-054798.netlify.app/about/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&text=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&title=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&is_video=false&description=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute&body=Check out this article: dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&title=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&title=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&name=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute&description=I%20created%20a%20page%20manager%20in%20the%20backstage%2c%20and%20it%20edit%20by%20the%20ckeditor.%20Also%2c%20I%20use%20Htmlpurifier%20to%20defense%20the%20xss%20injection.%20But%20Htmlpurifier%20will%20block%20the%20attribute%20like%20Bootstrap%20tabs%20plugins.%20So%20the%20way%20I%20used%20to%20allow%20attribute%20while%20using%20Htmlpurifier.%0aHere%20is%20the%20document.%0aFor%20example%2c%20I%20want%20to%20purify%20the%20html%20below.%0a%26lt%3bdiv%20class%3d%26%2334%3bbootstrap-tabs%26%2334%3b%20data-tab-set-title%3d%26%2334%3bProgram%20Introduction%26%2334%3b%26gt%3b%26lt%3b%2fdiv%26gt%3b%20If%20you%20use%20the%20simple%20purifier%20like%20this%2c%0afunction%20xss_filter%28%24content%29%7b%20%24purifier%20%3d%20new%20HTMLPurifier%28%24config%29%3b%20%24cleanContent%20%3d%20%24purifier-%26gt%3bpurify%28%24content%29%3b%20return%20%24cleanContent%3b%20%7d%20You%20will%20get%20the%20output%20below%2c" aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&t=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-    
-    <div id="toc">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-  </span>
-</div>
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        Ckeditor &#43; Htmlpurifier allow attribute
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2020-04-13 17:53:07 &#43;0800 CST" itemprop="datePublished">2020-04-13</time>
-          
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Jhuei Yummy">Jhuei Yummy</a>
         </div>
-        
-        
-        
-        
-      </div>
-    </header>
-
-  
-    
-    <div class="content" itemprop="articleBody">
-      <p>I created a page manager in the backstage, and it edit by the ckeditor. Also, I use Htmlpurifier to defense the xss injection. But Htmlpurifier will block the attribute like Bootstrap tabs plugins.
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="#" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Jhuei Yummy">Jhuei Yummy</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="#" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Ckeditor &#43; Htmlpurifier allow attribute</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Author</a>
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-13">2020-04-13</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-04-13">2020-04-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;119 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="content" id="content"><p>I created a page manager in the backstage, and it edit by the ckeditor. Also, I use Htmlpurifier to defense the xss injection. But Htmlpurifier will block the attribute like Bootstrap tabs plugins.
 So the way I used to allow attribute while using Htmlpurifier.</p>
-<p>Here is the <a href="http://www.poultry.org.tw/htmlpurifier/docs/enduser-customize.html">document</a>.</p>
+<p>Here is the <a href="http://www.poultry.org.tw/htmlpurifier/docs/enduser-customize.html" target="_blank" rel="noopener noreferrer">document</a>.</p>
 <p>For example, I want to purify the html below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrap-tabs&#34;</span> <span style="color:#a6e22e">data-tab-set-title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Program Introduction&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bootstrap-tabs&#34;</span> <span class="na">data-tab-set-title</span><span class="o">=</span><span class="s">&#34;Program Introduction&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>If you use the simple purifier like this,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">xss_filter</span>($content){
-</span></span><span style="display:flex;"><span>    $purifier <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HTMLPurifier</span>($config);
-</span></span><span style="display:flex;"><span>    $cleanContent <span style="color:#f92672">=</span> $purifier<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">purify</span>($content);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> $cleanContent;
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">xss_filter</span><span class="p">(</span><span class="nv">$content</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$purifier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HTMLPurifier</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$cleanContent</span> <span class="o">=</span> <span class="nv">$purifier</span><span class="o">-&gt;</span><span class="na">purify</span><span class="p">(</span><span class="nv">$content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$cleanContent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>You will get the output below,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bootstrap-tabs&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bootstrap-tabs&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>The  <em><strong>data-tab-set-title</strong></em>  is disabled. So, add the code below and you will get what you want.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$config <span style="color:#f92672">=</span> <span style="color:#a6e22e">HTMLPurifier_Config</span><span style="color:#f92672">::</span><span style="color:#a6e22e">createDefault</span>(); 
-</span></span><span style="display:flex;"><span>$def <span style="color:#f92672">=</span> $config<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHTMLDefinition</span>(<span style="color:#66d9ef">true</span>);
-</span></span><span style="display:flex;"><span>$def<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addAttribute</span>(<span style="color:#e6db74">&#39;div&#39;</span>, <span style="color:#e6db74">&#39;data-tab-set-title&#39;</span>, <span style="color:#e6db74">&#39;CDATA&#39;</span>);
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$config</span> <span class="o">=</span> <span class="nx">HTMLPurifier_Config</span><span class="o">::</span><span class="na">createDefault</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl"><span class="nv">$def</span> <span class="o">=</span> <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">getHTMLDefinition</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$def</span><span class="o">-&gt;</span><span class="na">addAttribute</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="s1">&#39;data-tab-set-title&#39;</span><span class="p">,</span> <span class="s1">&#39;CDATA&#39;</span><span class="p">);</span>
 </span></span></code></pre></div><p>Hope it will help !</p>
-
-    </div>
-  </article>
-
-  
-  
-
-
-
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="dancing-arithmetic-054798.netlify.app/">Home</a></li>
-         
-          <li><a href="dancing-arithmetic-054798.netlify.app/posts">Posts</a></li>
-         
-          <li><a href="dancing-arithmetic-054798.netlify.app/tags">Tags</a></li>
-         
-          <li><a href="dancing-arithmetic-054798.netlify.app/about">About</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&text=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&title=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&is_video=false&description=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute&body=Check out this article: dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&title=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&title=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&name=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute&description=I%20created%20a%20page%20manager%20in%20the%20backstage%2c%20and%20it%20edit%20by%20the%20ckeditor.%20Also%2c%20I%20use%20Htmlpurifier%20to%20defense%20the%20xss%20injection.%20But%20Htmlpurifier%20will%20block%20the%20attribute%20like%20Bootstrap%20tabs%20plugins.%20So%20the%20way%20I%20used%20to%20allow%20attribute%20while%20using%20Htmlpurifier.%0aHere%20is%20the%20document.%0aFor%20example%2c%20I%20want%20to%20purify%20the%20html%20below.%0a%26lt%3bdiv%20class%3d%26%2334%3bbootstrap-tabs%26%2334%3b%20data-tab-set-title%3d%26%2334%3bProgram%20Introduction%26%2334%3b%26gt%3b%26lt%3b%2fdiv%26gt%3b%20If%20you%20use%20the%20simple%20purifier%20like%20this%2c%0afunction%20xss_filter%28%24content%29%7b%20%24purifier%20%3d%20new%20HTMLPurifier%28%24config%29%3b%20%24cleanContent%20%3d%20%24purifier-%26gt%3bpurify%28%24content%29%3b%20return%20%24cleanContent%3b%20%7d%20You%20will%20get%20the%20output%20below%2c" aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=dancing-arithmetic-054798.netlify.app%2fposts%2fckeditor-htmlpurifier-allow-attribute%2f&t=Ckeditor%20%2b%20Htmlpurifier%20allow%20attribute" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
 </div>
 
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-04-13</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
 
-  <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2023  Jhuei Yummy 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/">Home</a></li>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/posts">Posts</a></li>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/tags">Tags</a></li>
-         
-        <li><a href="dancing-arithmetic-054798.netlify.app/about">About</a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</footer>
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
 
+    <div class="post-nav"></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.102.3">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
 
-  </div>
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 </body>
-
-<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
-<script src=/js/main.js></script>
-
-<script src=/dancing-arithmetic-054798.netlify.app/js/code-copy.js></script>
-
-
-
 
 </html>
