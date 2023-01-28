@@ -1,0 +1,253 @@
+# Translations for Simplified Chinese
+# 简体中文的翻译
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# === baseof ==
+[backToTop]
+other = "回到頂部"
+
+[viewComments]
+other = "查看評論"
+# === baseof ==
+
+# === Post ===
+[posts]
+other = "文章"
+# === Post ===
+
+# === Taxonomy ===
+[allSome]
+other = "所有{{ .Some }}"
+
+[tag]
+other = "標籤"
+
+[tags]
+other = "標籤"
+
+[category]
+other = "分類"
+
+[categories]
+other = "分類"
+
+[series]
+other = "系列"
+# === Taxonomy ===
+
+# === Section ===
+
+[recentlyUpdated]
+other = "最近更新"
+
+# === Section ===
+
+# === Pagination ===
+[more]
+other = "更多"
+# === Pagination ===
+
+# === partials/header.html ===
+[selectLanguage]
+other = "選擇語言"
+
+[switchTheme]
+other = "切換主題"
+
+[Light]
+other = "淺色"
+
+[Dark]
+other = "深色"
+
+[Black]
+other = "黑色"
+
+[Auto]
+other = "跟隨系統"
+# === partials/header.html ===
+
+# === partials/footer.html ===
+[poweredBy]
+other = "由 {{ .Hugo }} 強力驅動"
+
+[hostedOn]
+other = "托管在 {{ .Host }} 上"
+
+[theme]
+other = "主题 - {{ .Theme }}"
+# === partials/footer.html ===
+
+# === partials/comment.html ===
+[valineLang]
+other = "zh-tw"
+
+[valinePlaceholder]
+other = "你的評論 ..."
+
+[facebookLanguageCode]
+other = "zh_TW"
+# === partials/comment.html ===
+
+# === partials/assets.html ===
+[search]
+other = "搜尋"
+
+[searchPlaceholder]
+other = "搜尋文章標題或内容..."
+
+[clear]
+other = "清空"
+
+[cancel]
+other = "取消"
+
+[noResultsFound]
+other = "沒有找到结果"
+
+[copyToClipboard]
+other = "複製到剪貼簿"
+
+[cookieconsentMessage]
+other = "本網站使用 Cookies 來改善您的瀏覽體驗."
+
+[cookieconsentDismiss]
+other = "同意"
+
+[cookieconsentLink]
+other = "了解更多"
+# === partials/assets.html ===
+
+# === partials/plugin/share.html ===
+[shareOn]
+other = "分享到"
+# === partials/plugin/share.html ===
+
+# === posts/single.html ===
+[contents]
+other = "目錄"
+
+[publishedOnDate]
+other = "發佈於 {{ .Date }}"
+
+[includedIn]
+other = "收錄於 "
+
+[includedInAnd]
+other = "和"
+
+[includedInCategories]
+other = "類別 {{ .Categories }}"
+
+[includedInSeries]
+other = "系列 {{ .Series }}"
+
+[wordCount]
+other = "約 {{ .Count }} 字"
+
+[readingTime]
+other = "預計閱讀 {{ .Count }} 分鐘"
+
+[views]
+other = "次閱讀"
+
+[comments]
+other = "條評論"
+
+[author]
+other = "作者"
+
+[updatedOnDate]
+other = "更新於 {{ .Date }}"
+
+[readMarkdown]
+other = "閱讀原始文檔"
+
+[viewSource]
+other = "查看原始碼"
+
+[editThisPage]
+other = "編輯此頁"
+
+[reportThisPage]
+other = "報告問題"
+
+[back]
+other = "返回"
+
+[home]
+other = "主頁"
+
+[readMore]
+other = "閱讀全文"
+
+[outdatedInfoWarningBefore]
+other = "本文最後更新於 "
+
+[outdatedInfoWarningAfter]
+other = "，文中內容可能已過時。"
+
+[sponsor]
+other = "讚賞"
+
+[relatedContent]
+other = "相關內容"
+# === posts/single.html ===
+
+# === 404.html ===
+[pageNotFound]
+other = "頁面沒找到"
+
+[pageNotFoundText]
+other = "抱歉, 您要查的頁面不存在."
+# === 404.html ===
+
+# === shortcodes/admonition.html ===
+[note]
+other = "注意"
+
+[abstract]
+other = "摘要"
+
+[info]
+other = "信息"
+
+[tip]
+other = "技巧"
+
+[success]
+other = "成功"
+
+[question]
+other = "問題"
+
+[warning]
+other = "警告"
+
+[failure]
+other = "失敗"
+
+[danger]
+other = "危險"
+
+[bug]
+other = "Bug"
+
+[example]
+other = "範例"
+
+[quote]
+other = "引用"
+# === shortcodes/admonition.html ===
+
+# === shortcodes/version.html ===
+[new]
+other = "新增"
+
+[changed]
+other = "更改"
+
+[deleted]
+other = "刪除"
+# === shortcodes/version.html ===
+
