@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>cookie - tag - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/cookie/</link>
+        <description>cookie - tag - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/cookie/" rel="self" type="application/rss+xml" /><item>
+    <title>Stop Jekyll serve (127.0.0.1:4000)</title>
+    <link>https://jhuei.com/test-page/</link>
+    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/test-page/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/img/test.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>解決Jekyll serve 無法關閉  - Jekyll serve service worker</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

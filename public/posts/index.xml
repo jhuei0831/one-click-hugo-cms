@@ -1,18 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - Jhuei Yummy</title>
-        <link>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/</link>
-        <description>All Posts | Jhuei Yummy</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Mon, 13 Apr 2020 17:53:07 &#43;0800</lastBuildDate><atom:link href="https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Ckeditor &#43; Htmlpurifier allow attribute</title>
-    <link>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</link>
-    <pubDate>Mon, 13 Apr 2020 17:53:07 &#43;0800</pubDate><author>
-        <name>Author</name>
-    </author><guid>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</guid>
-    <description><![CDATA[I created a page manager in the backstage, and it edit by the ckeditor. Also, I use Htmlpurifier to defense the xss injection. But Htmlpurifier will block the attribute like Bootstrap tabs plugins. So the way I used to allow attribute while using Htmlpurifier.
-Here is the document.
-For example, I want to purify the html below.
-&lt;div class=&#34;bootstrap-tabs&#34; data-tab-set-title=&#34;Program Introduction&#34;&gt;&lt;/div&gt; If you use the simple purifier like this,
-function xss_filter($content){ $purifier = new HTMLPurifier($config); $cleanContent = $purifier-&gt;purify($content); return $cleanContent; } You will get the output below,]]></description>
+        <title> - Jhuei Yummy</title>
+        <link>https://jhuei.com/posts/</link>
+        <description> | Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Stop Jekyll serve (127.0.0.1:4000)</title>
+    <link>https://jhuei.com/test-page/</link>
+    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/test-page/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/img/test.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>解決Jekyll serve 無法關閉  - Jekyll serve service worker</p>
+</blockquote>]]></description>
 </item></channel>
 </rss>

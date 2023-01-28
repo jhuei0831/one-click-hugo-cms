@@ -2,11 +2,17 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod></url><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod></url><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/blog/2023-01-22-test-title/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod></url><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/ckeditor-htmlpurifier-allow-attribute/</loc><lastmod>2020-04-13T17:53:07&#43;08:00</lastmod></url><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/posts/</loc><lastmod>2020-04-13T17:53:07&#43;08:00</lastmod></url><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/about/</loc><lastmod>2016-08-24T17:51:42&#43;00:00</lastmod></url><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/categories/</loc></url><url>
-            <loc>https://63ccf8bd431b306858db4563--dancing-arithmetic-054798.netlify.app/tags/</loc></url></urlset>
+            <loc>https://jhuei.com/blog/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jhuei.com/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jhuei.com/blog/2023-01-22-test-title/</loc><lastmod>2023-01-22T10:21:06&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jhuei.com/authors/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/categories/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/tags/cookie/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/categories/issue/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/tags/jekyll/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/authors/kerwin/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/posts/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/test-page/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/tags/</loc><lastmod>2020-04-18T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/about/</loc><lastmod>2016-08-24T17:51:42&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jhuei.com/series/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
