@@ -256,7 +256,7 @@ hideReadingTime = false
     #  whether to enable twemoji
     twemoji = false
     # whether to enable lightgallery
-    lightgallery = false
+    lightgallery = true
     #  whether to enable the ruby extended syntax
     ruby = true
     #  whether to enable the fraction extended syntax
@@ -522,7 +522,7 @@ hideReadingTime = false
         logoUrl = ""
     #  Related content config
       [params.page.related]
-        enable = true
+        enable = false
         count = 5
 
 
@@ -713,7 +713,7 @@ series = "series"
     hasCJKLanguage = true
     [[languages.zh-tw.menu.main]]
       identifier = "posts"
-      pre = ""
+      pre = "<i class='fas fa-file-alt'></i>"
       post = ""
       name = "文章"
       url = "/posts/"
@@ -721,7 +721,7 @@ series = "series"
       weight = 1
     [[languages.zh-tw.menu.main]]
       identifier = "tags"
-      pre = ""
+      pre = "<i class='fas fa-tag'></i>"
       post = ""
       name = "標籤"
       url = "/tags/"
@@ -729,10 +729,18 @@ series = "series"
       weight = 2
     [[languages.zh-tw.menu.main]]
       identifier = "categories"
-      pre = ""
+      pre = "<i class='fas fa-list'></i>"
       post = ""
       name = "分類"
       url = "/categories/"
       title = ""
       weight = 3
+    [[languages.zh-tw.menu.main]]
+      identifier = "series"
+      pre = "<i class='fas fa-folder'></i>"
+      post = ""
+      name = "系列"
+      url = "/series/"
+      title = ""
+      weight = 4
 
