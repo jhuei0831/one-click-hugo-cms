@@ -20,21 +20,29 @@ series_weight: 1
 
 前陣子開始接觸 Laravel ，算是第一個接觸的MVC框架 ，學了一段時間後就想做一個小品當作練習。這個練習的目的就是讓我熟悉 `Model`、`View`、`Controller` 三者之間的愛恨糾葛😂。不會講得很細，就是分享我遇到的問題以及解決的方法。
 
+---
+
 ## 使用工具
 
 |  工具 | Laravel | PHP | MySQL |
 | :--------: | :--------: | :--------: | :--------: |
 | 版本    | 5.8     | 7.2     | 5.7     |
 
+---
+
 ## 目標
 
 完成一個後端控制前台發布文章、導覽列、消息、輪播、訊息的網站。
 
+---
+
 ## 成品圖
 
-[![fontend](https://i.imgur.com/pA0CUz0.png)](https://i.imgur.com/pA0CUz0.png)
+{{< image src="https://i.imgur.com/pA0CUz0.png" caption="fontend">}}
 
-[![backend](https://i.imgur.com/GMe8NcD.png)](https://i.imgur.com/GMe8NcD.png)
+{{< image src="https://i.imgur.com/GMe8NcD.png" caption="backend">}}
+
+---
 
 ## 設置
 
@@ -67,6 +75,6 @@ DB_PASSWORD=password
 
 最後執行 `php artisan serve` 開始運行 laravel ，並到 網址`http://127.0.0.1:8000/`，成功看到下圖就沒事可以去看個[Laravel Document](https://laravel.com/docs/5.8/readme) 壓壓驚了。
 
-[![laravel](https://i.imgur.com/vo0yJtw.png)](https://i.imgur.com/vo0yJtw.png)
+{{< image src="https://i.imgur.com/vo0yJtw.png" caption="laravel">}}
 
 > ❤❤  貼心小提醒，記得版控ㄛ ❤❤
