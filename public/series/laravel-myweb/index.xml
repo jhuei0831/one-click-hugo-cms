@@ -1,0 +1,117 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Laravel Backend Control Website - 系列 - Jhuei Yummy</title>
+        <link>https://jhuei.com/series/laravel-myweb/</link>
+        <description>Laravel Backend Control Website - 系列 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Thu, 11 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/series/laravel-myweb/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel Backend Control Website - 1</title>
+    <link>https://jhuei.com/laravel-myweb-1/</link>
+    <pubDate>Tue, 21 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-1/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 網站設置和預計設計目標 - Website settings and expected design goals</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 2</title>
+    <link>https://jhuei.com/laravel-myweb-2/</link>
+    <pubDate>Wed, 22 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-2/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 基本設置以及前後台公版 - Basic setup and template.</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 3</title>
+    <link>https://jhuei.com/laravel-myweb-3/</link>
+    <pubDate>Tue, 28 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-3/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-3/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 路由、參數及按鈕設定 - Setting Routes、 Variables and Button</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 4</title>
+    <link>https://jhuei.com/laravel-myweb-4/</link>
+    <pubDate>Wed, 29 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-4/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-4/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 會員管理 / CRUD - Laravel member system / CRUD</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 5</title>
+    <link>https://jhuei.com/laravel-myweb-5/</link>
+    <pubDate>Thu, 30 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-5/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-5/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 6</title>
+    <link>https://jhuei.com/laravel-myweb-6/</link>
+    <pubDate>Sun, 03 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-6/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-6/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 導覽列管理 - Navbar Manage</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 7</title>
+    <link>https://jhuei.com/laravel-myweb-7/</link>
+    <pubDate>Tue, 05 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-7/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-7/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 拖曳排序、視圖合成器 - Drag Sort、View Composer</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 8</title>
+    <link>https://jhuei.com/laravel-myweb-8/</link>
+    <pubDate>Sun, 10 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-8/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 頁面管理 - Page Manager</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 9</title>
+    <link>https://jhuei.com/laravel-myweb-9/</link>
+    <pubDate>Fri, 22 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-9/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-9/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel XSS Defense by use Htmlpurifier</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 10</title>
+    <link>https://jhuei.com/laravel-myweb-10/</link>
+    <pubDate>Sun, 31 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-10/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-10/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>執行後產生LOG資料 -Generate LOG Data After Execution</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

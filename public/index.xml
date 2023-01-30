@@ -3,18 +3,117 @@
         <title>Jhuei Yummy</title>
         <link>https://jhuei.com/</link>
         <description>Want to learn fried chicken? Teach you!</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sun, 22 Jan 2023 10:21:06 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sun, 08 Jan 2023 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://jhuei.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Stop Jekyll serve (127.0.0.1:4000)</title>
-    <link>https://jhuei.com/test-page/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+    <title>Yii2 basic login auth with database</title>
+    <link>https://jhuei.com/yii2-basic-auth-login/</link>
+    <pubDate>Sun, 08 Jan 2023 00:00:00 &#43;0000</pubDate><author>
                     <name>Kerwin</name>
-                </author><guid>https://jhuei.com/test-page/</guid>
+                </author><guid>https://jhuei.com/yii2-basic-auth-login/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/img/test.png" referrerpolicy="no-referrer">
+                <img src="/yii2-basic-auth-login/feature.jpg" referrerpolicy="no-referrer">
             </div><blockquote>
-<p>解決Jekyll serve 無法關閉  - Jekyll serve service worker</p>
+<p>使用MySQL完成Yii2 app basic專案登入範例</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Web Vulnerability Prevent</title>
+    <link>https://jhuei.com/web-vulnerability-prevent/</link>
+    <pubDate>Sat, 30 Apr 2022 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/web-vulnerability-prevent/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/web-vulnerability-prevent/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>弱點掃描、滲透測試或源碼檢測網路漏洞風險修補方法分享</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Set Up XAMPP Laravel in Ali ECS</title>
+    <link>https://jhuei.com/set-pp-xampp-laravel-in-ali-ecs/</link>
+    <pubDate>Mon, 11 Jan 2021 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/set-pp-xampp-laravel-in-ali-ecs/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/set-pp-xampp-laravel-in-ali-ecs/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>阿里雲ECS使用XAMPP環境建Laravel</p>
+</blockquote>]]></description>
+</item><item>
+    <title>TCPDF addTTFfont Problem</title>
+    <link>https://jhuei.com/tcpdf-addfont/</link>
+    <pubDate>Fri, 13 Nov 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/tcpdf-addfont/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/tcpdf-addfont/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>使用TCPDF的addTTFfont加入字型問題</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Tips</title>
+    <link>https://jhuei.com/laravel-tips/</link>
+    <pubDate>Wed, 21 Oct 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-tips/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-tips/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel一些實用小技巧或語法</p>
+</blockquote>]]></description>
+</item><item>
+    <title>PHP cURL API (POST &amp; GET)</title>
+    <link>https://jhuei.com/php-curl-api/</link>
+    <pubDate>Fri, 09 Oct 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/php-curl-api/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/php-curl-api/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>使用cURL去接別人的API</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Event - Pusher</title>
+    <link>https://jhuei.com/laravel-event-pusher/</link>
+    <pubDate>Sun, 04 Oct 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-event-pusher/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-event-pusher/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>使用Pusher在Laravel的事件中做出廣播功能</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Excel Export - Basic</title>
+    <link>https://jhuei.com/laravel-excel-export-basic/</link>
+    <pubDate>Tue, 07 Jul 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-excel-export-basic/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-excel-export-basic/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 匯出基礎篇 - Basic Laravel Export</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Zip</title>
+    <link>https://jhuei.com/laravel-zip/</link>
+    <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-zip/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-zip/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>壓縮下載 - Zip Download</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 12</title>
+    <link>https://jhuei.com/laravel-myweb-12/</link>
+    <pubDate>Thu, 11 Jun 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-12/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-12/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>選單管理 - Menu Manage</p>
 </blockquote>]]></description>
 </item></channel>
 </rss>

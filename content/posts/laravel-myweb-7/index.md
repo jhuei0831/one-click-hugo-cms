@@ -16,24 +16,14 @@ series_weight: 7
 
 <!--more-->
 
-### 前言
+## 前言
 
----
 Hello 大家 ! 在 [上一篇](https://jhuei.com/code/2020/05/03/laravel-myweb-6.html) 提到了視圖合成器(View Composer)以及如何利用拖曳來進行導覽列的排序，這篇就來一一解答。
 
-### 本篇重點
-
 ---
 
-* [視圖合成器](#view)
-* [拖曳排序](#sort)
-* [總結](#conclusion)
+## 1. 視圖合成器
 
-{: id='view'}
-
-### 1. 視圖合成器 [🔝](#top)
-
----
 視圖合成器(View Composer) 提供了一種方法讓你將資料一次性的分享到指定的視圖，上一篇所使用到的 :
 
 ```php
@@ -50,14 +40,14 @@ View::composer(['*'], function ($view) {
 
 這樣一來就不用再控制器重複宣告資料了。
 
+{{< admonition type=warning title="注意" open=true >}}
 但要記得，由於是分享到所視圖，不能和控制器宣告的名字衝突。
-{: .notice--danger}
-
-{: id='sort'}
-
-### 2. 拖曳排序 [🔝](#top)
+{{< /admonition >}}
 
 ---
+
+## 2. 拖曳排序
+
 要完成拖曳排序，要使用幾個工具 :
 
 * Datatable
@@ -205,7 +195,7 @@ Route::middleware('auth','admin')->group(function() {
 
 做到這裡應該可以用滑鼠拖曳表格內的`<td>` :
 
-[![drag](https://i.imgur.com/DixcbAx.gif)](https://i.imgur.com/DixcbAx.gif)
+{{< image src="https://i.imgur.com/DixcbAx.gif" caption="drag">}}
 
 接下來要做的就是拖曳後將排序資料寫入資料庫 ，在 `NavbarController.php` 中加入 :
 
@@ -235,11 +225,9 @@ public function sort(Request $request)
 
 在一次拖曳排序後重新整理應該就會實現了。
 
-{: id='conclusion'}
-
-### 總結 [🔝](#top)
-
 ---
+
+## 總結
 
 * 使用 [View composer](https://laravel.com/docs/5.8/views#view-composers) 必須確定自己宣告的名稱。
 * View composer 也可以在 `Provide` 中使用。

@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>tips - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/tips/</link>
+        <description>tips - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Wed, 21 Oct 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/tips/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel Tips</title>
+    <link>https://jhuei.com/laravel-tips/</link>
+    <pubDate>Wed, 21 Oct 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-tips/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-tips/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel一些實用小技巧或語法</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

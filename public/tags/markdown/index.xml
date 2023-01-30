@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>markdown - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/markdown/</link>
+        <description>markdown - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Wed, 22 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/markdown/" rel="self" type="application/rss+xml" /><item>
+    <title>Translate Big Parantheses in Markdown</title>
+    <link>https://jhuei.com/translate-big-parantheses-markdown/</link>
+    <pubDate>Wed, 22 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/translate-big-parantheses-markdown/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/translate-big-parantheses-markdown/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>如何在markdown中顯示雙大括號 - How to translate double big parantheses in markdown</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

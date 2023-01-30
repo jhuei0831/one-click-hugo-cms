@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Laravel Backend Control Website - 12 - Jhuei Yummy</title><meta name="Description" content="選單管理 - Menu Manage"><meta property="og:title" content="Laravel Backend Control Website - 12" />
+<meta property="og:description" content="選單管理 - Menu Manage" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jhuei.com/laravel-myweb-12/" /><meta property="og:image" content="https://jhuei.com/laravel-myweb-12/feature.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-11T00:00:00+00:00" /><meta property="og:site_name" content="Jhuei Yummy" />
+<meta property="og:see_also" content="https://jhuei.com/laravel-myweb-1/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-2/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-3/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-4/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-5/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-6/" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jhuei.com/laravel-myweb-12/feature.jpg"/>
+<meta name="twitter:title" content="Laravel Backend Control Website - 12"/>
+<meta name="twitter:description" content="選單管理 - Menu Manage"/>
+<meta name="application-name" content="Jhuei Yummy">
+<meta name="apple-mobile-web-app-title" content="Jhuei Yummy">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jhuei.com/laravel-myweb-12/" /><link rel="prev" href="https://jhuei.com/laravel-myweb-11/" /><link rel="next" href="https://jhuei.com/laravel-zip/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel Backend Control Website - 12",
+        "inLanguage": "zh-tw",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jhuei.com\/laravel-myweb-12\/"
+        },"genre": "posts","keywords": "laravel, php, html, javascript, menu, htmlpurifier, page, navbar","wordcount":  1326 ,
+        "url": "https:\/\/jhuei.com\/laravel-myweb-12\/","datePublished": "2020-06-11T00:00:00+00:00","dateModified": "2020-06-11T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"authors": [{
+                        "@type": "Person",
+                        "name": "Kerwin"                    
+                    }],"description": "選單管理 - Menu Manage"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fas fa-file-alt'></i> 文章 </a><a class="menu-item" href="/tags/"><i class='fas fa-tag'></i> 標籤 </a><a class="menu-item" href="/categories/"><i class='fas fa-list'></i> 分類 </a><a class="menu-item" href="/series/"><i class='fas fa-folder'></i> 系列 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切換主題">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切換主題">
+                        <option value="light">淺色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟隨系統</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fas fa-file-alt'></i>文章</a><a class="menu-item" href="/tags/" title=""><i class='fas fa-tag'></i>標籤</a><a class="menu-item" href="/categories/" title=""><i class='fas fa-list'></i>分類</a><a class="menu-item" href="/series/" title=""><i class='fas fa-folder'></i>系列</a><a href="#" class="menu-item theme-select" title="切換主題">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切換主題">
+                    <option value="light">淺色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟隨系統</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目錄</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-導覽列規則">1. 導覽列規則</a></li>
+    <li><a href="#2-選單規則">2. 選單規則</a></li>
+    <li><a href="#3-頁面規則">3. 頁面規則</a></li>
+    <li><a href="#4-頁面及選單串聯">4. 頁面及選單串聯</a></li>
+    <li><a href="#結語">結語</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Laravel Backend Control Website - 12</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://jhuei.com/authors/kerwin'>Kerwin</a></span>
+                </span>&nbsp;<span class="post-category">收錄於 </span>&nbsp;<span class="post-category">類別 <a href="/categories/code/"><i class="far fa-folder fa-fw"></i>CODE</a></span>&nbsp;<span class="post-category">和</span>&nbsp;<span class="post-series">系列 <a href="/series/laravel-myweb/"><i class="far fa-list-alt fa-fw"></i>Laravel Backend Control Website</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-11">2020-06-11</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-06-11">2020-06-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;約 1326 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;預計閱讀 3 分鐘&nbsp;</div>
+        </div><div class="details series-nav open">
+                                <div class="details-summary series-title">
+                                    <span>系列 - Laravel Backend Control Website</span>
+                                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                                </div>
+                                <div class="details-content series-content">
+                                    <nav>
+                                        <ul>
+                                                    <li><a href="/laravel-myweb-1/">Laravel Backend Control Website - 1</a></li>
+                                                    <li><a href="/laravel-myweb-2/">Laravel Backend Control Website - 2</a></li>
+                                                    <li><a href="/laravel-myweb-3/">Laravel Backend Control Website - 3</a></li>
+                                                    <li><a href="/laravel-myweb-4/">Laravel Backend Control Website - 4</a></li>
+                                                    <li><a href="/laravel-myweb-5/">Laravel Backend Control Website - 5</a></li>
+                                                    <li><a href="/laravel-myweb-6/">Laravel Backend Control Website - 6</a></li>
+                                                    <li><a href="/laravel-myweb-7/">Laravel Backend Control Website - 7</a></li>
+                                                    <li><a href="/laravel-myweb-8/">Laravel Backend Control Website - 8</a></li>
+                                                    <li><a href="/laravel-myweb-9/">Laravel Backend Control Website - 9</a></li>
+                                                    <li><a href="/laravel-myweb-10/">Laravel Backend Control Website - 10</a></li>
+                                                    <li><a href="/laravel-myweb-11/">Laravel Backend Control Website - 11</a></li><li><span class="active">Laravel Backend Control Website - 12</span></li></ul>
+                                    </nav>
+                                </div>
+                            </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目錄</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-導覽列規則">1. 導覽列規則</a></li>
+    <li><a href="#2-選單規則">2. 選單規則</a></li>
+    <li><a href="#3-頁面規則">3. 頁面規則</a></li>
+    <li><a href="#4-頁面及選單串聯">4. 頁面及選單串聯</a></li>
+    <li><a href="#結語">結語</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>選單管理 - Menu Manage</p>
+</blockquote>
+<h2 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p><a href="https://jhuei.com/code/2020/06/10/laravel-myweb-11.html" target="_blank" rel="noopener noreferrer">上一篇</a> 新增了選單管理，這篇就是要將 <code>導覽列</code>、<code>選單</code>及 <code>頁面</code> 三者串連起來。</p>
+<hr>
+<h2 id="1-導覽列規則" class="headerLink">
+    <a href="#1-%e5%b0%8e%e8%a6%bd%e5%88%97%e8%a6%8f%e5%89%87" class="header-mark"></a>1. 導覽列規則</h2><ul>
+<li>導覽名稱唯一(Unique)。</li>
+<li>類型一 : 導覽目錄
+<ul>
+<li>下拉式選單，無視設定連結。</li>
+<li>選單內容可以在選單管理進行排序設定。</li>
+</ul>
+</li>
+<li>類型二 : 一般頁面
+<ul>
+<li>點選後直接跳到該頁面。</li>
+<li>外部連結直接貼完整網址，ex : <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">https://www.google.com/</a></li>
+<li>指定頁面連結要透過指定格式，如<a href="http://127.0.0.1:8000/article/%e5%b0%8e%e8%a6%bd%e5%88%97%e5%90%8d%e7%a8%b1/%e9%81%b8%e5%96%ae%e5%90%8d%e7%a8%b1?%e9%a0%81%e9%9d%a2%e7%b6%b2%e5%9d%80%e3%80%82" target="_blank" rel="noopener noreferrer">http://127.0.0.1:8000/article/導覽列名稱/選單名稱?頁面網址。</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-選單規則" class="headerLink">
+    <a href="#2-%e9%81%b8%e5%96%ae%e8%a6%8f%e5%89%87" class="header-mark"></a>2. 選單規則</h2><ul>
+<li>選單名稱唯一(Unique)。</li>
+<li>如有設定連結，點擊選單則跳轉到該頁面。</li>
+<li>清單顯示意指所有 <code>頁面設定</code> 連接該選單的頁面以條列式一一顯示。</li>
+<li>非清單顯示意指顯示 <code>更新時間</code> 最新的頁面。</li>
+<li>連結設定請參照導覽列 <code>一般頁面</code> 設定。</li>
+</ul>
+<hr>
+<h2 id="3-頁面規則" class="headerLink">
+    <a href="#3-%e9%a0%81%e9%9d%a2%e8%a6%8f%e5%89%87" class="header-mark"></a>3. 頁面規則</h2><ul>
+<li>頁面網址唯一(Unique)。</li>
+<li>頁面網址用來定義該頁面位置，所以只須給名稱即可，ex:Page1。</li>
+<li>在選單的清單顯示中，頁面以 <code>更新時間</code> 新到舊進行排序。</li>
+</ul>
+<hr>
+<h2 id="4-頁面及選單串聯" class="headerLink">
+    <a href="#4-%e9%a0%81%e9%9d%a2%e5%8f%8a%e9%81%b8%e5%96%ae%e4%b8%b2%e8%81%af" class="header-mark"></a>4. 頁面及選單串聯</h2><p>之前有在 <code>pages</code> 資料表建立 <code>menu_id</code> 的欄位，現在要在 <code>Page</code> 的新增、修改及首頁加入 <code>menu_id</code> 的新增修改表單。</p>
+<p><code>create.blade.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">...略...
+</span></span><span class="line"><span class="cl">@csrf
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group row&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;menu_id&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 col-form-label text-md-right&#34;</span><span class="p">&gt;</span>{% raw %}{{ trans(&#39;Menu&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-6&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;form-control&#39;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;menu_id&#39;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;menuHelp&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">&gt;</span>{% raw %}{{ trans(&#39;Please choose&#39;).trans(&#39;Menu&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            @foreach($menus as $key =&gt; $value)
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ $value[&#39;id&#39;] }}{% endraw %}&#34;</span><span class="p">&gt;</span>{% raw %}{{ $value[&#39;name&#39;] }}{% endraw %}<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            @endforeach
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;menuHelp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;help-block&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            選擇要加入的導覽列項目。
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">...略...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>edit.blade.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">...略...
+</span></span><span class="line"><span class="cl">@csrf
+</span></span><span class="line"><span class="cl">@method(&#39;PUT&#39;)
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group row&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;menu_id&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 col-form-label text-md-right&#34;</span><span class="p">&gt;</span>{% raw %}{{ trans(&#39;Menu&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-6&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">select</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;form-control&#39;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;menu_id&#39;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&#34;menuHelp&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#39;NULL&#39;</span> <span class="err">{%</span> <span class="na">raw</span> <span class="err">%}{{</span> <span class="err">($</span><span class="na">page-</span><span class="p">&gt;</span>menu_id) ? &#34;selected&#34; : &#34;&#34; }}{% endraw %}&gt;{% raw %}{{ trans(&#39;Please choose&#39;).trans(&#39;Menu&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            @foreach($menus as $key =&gt; $value)
+</span></span><span class="line"><span class="cl">                @if ($value[&#39;id&#39;] == $page-&gt;menu_id)
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ $value[&#39;id&#39;] }}{% endraw %}&#34;</span> <span class="na">selected</span><span class="p">&gt;</span>{% raw %}{{ $value[&#39;name&#39;] }}{% endraw %}<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                @else
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ $value[&#39;id&#39;] }}{% endraw %}&#34;</span><span class="p">&gt;</span>{% raw %}{{ $value[&#39;name&#39;] }}{% endraw %}<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                @endif
+</span></span><span class="line"><span class="cl">            @endforeach
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;menuHelp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;help-block&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            選擇要加入的導覽列項目。
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">...略...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下來根據重點 1~3 在 <code>MenuController.php</code> 建立以下 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="sd">/**
+</span></span></span><span class="line"><span class="cl"><span class="sd">* [menus description]
+</span></span></span><span class="line"><span class="cl"><span class="sd">* @param  [type] $nav  [選取的導覽列]
+</span></span></span><span class="line"><span class="cl"><span class="sd">* @param  [type] $menu [選取的選單]
+</span></span></span><span class="line"><span class="cl"><span class="sd">* @param  [type] $menus_nav [導覽列下所有的選單資料]
+</span></span></span><span class="line"><span class="cl"><span class="sd">* @param  [type] $select_menu [選取的選單資料]
+</span></span></span><span class="line"><span class="cl"><span class="sd">* @param  [type] $menu_pages [選取選單下所有頁面的資料]
+</span></span></span><span class="line"><span class="cl"><span class="sd">* @return [type]       [description]
+</span></span></span><span class="line"><span class="cl"><span class="sd">*/</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">function</span> <span class="nf">menus</span><span class="p">(</span><span class="nv">$nav</span><span class="p">,</span><span class="nv">$menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$navbar</span> <span class="o">=</span> <span class="nx">Navbar</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="nv">$nav</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$menus_nav</span> <span class="o">=</span> <span class="nx">Menu</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;navbar_id&#39;</span><span class="p">,</span><span class="nv">$navbar</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;is_open&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">orderby</span><span class="p">(</span><span class="s1">&#39;sort&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$select_menu</span> <span class="o">=</span> <span class="nx">Menu</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="nv">$menu</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$select_menu</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$select_menu</span><span class="o">-&gt;</span><span class="na">is_list</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$menu_pages</span> <span class="o">=</span> <span class="nx">Page</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;is_open&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">orderby</span><span class="p">(</span><span class="s1">&#39;updated_at&#39;</span><span class="p">,</span><span class="s1">&#39;desc&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">paginate</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$menu_pages</span> <span class="o">=</span> <span class="nx">Page</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;menu_id&#39;</span><span class="p">,</span><span class="nv">$select_menu</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;is_open&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">orderby</span><span class="p">(</span><span class="s1">&#39;updated_at&#39;</span><span class="p">,</span><span class="s1">&#39;desc&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">,</span><span class="nx">compact</span><span class="p">(</span><span class="s1">&#39;menus_nav&#39;</span><span class="p">,</span><span class="s1">&#39;select_menu&#39;</span><span class="p">,</span><span class="s1">&#39;navbar&#39;</span><span class="p">,</span><span class="s1">&#39;menu_pages&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>路由新增 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/article/{nav}/{menu}?{page}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);})</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;page&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/article/{nav}/{menu}&#39;</span><span class="p">,</span> <span class="s1">&#39;MenuController@menus&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">View</span><span class="o">::</span><span class="na">composer</span><span class="p">([</span><span class="s1">&#39;*&#39;</span><span class="p">],</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$view</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">Request</span><span class="o">::</span><span class="na">getQueryString</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$current_page</span> <span class="o">=</span> <span class="nx">App\Page</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;QUERY_STRING&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;current_page&#39;</span><span class="p">,</span> <span class="nv">$current_page</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">$pages</span> <span class="o">=</span> <span class="nx">App\Page</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;is_open&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">orderby</span><span class="p">(</span><span class="s1">&#39;updated_at&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;pages&#39;</span><span class="p">,</span><span class="nv">$pages</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>解釋時間 :</p>
+<ul>
+<li><code>$nav</code> 和 <code>$menu</code> 分別是導覽列以及選單的 <code>名稱</code>。</li>
+<li>比如說點擊了名為 <code>menu1</code> 的選單且導覽列為 <code>nav1</code>，控制器14~17行判斷該選單是否存在。</li>
+<li>若選單存在則19行判斷是否為清單顯示。</li>
+</ul>
+<p>視圖新增 :</p>
+<p><code>menu.blade.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">@extends(&#39;_layouts.home.app&#39;)
+</span></span><span class="line"><span class="cl">@section(&#39;title&#39;,$select_menu-&gt;name)
+</span></span><span class="line"><span class="cl">@section(&#39;content&#39;)
+</span></span><span class="line"><span class="cl">{% raw %}{{-- 頁面顯示 --}}{% endraw %}
+</span></span><span class="line"><span class="cl">@if(Request::getQueryString())
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-12&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card border-light&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;border: none;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-header bg-transparent&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>{% raw %}{{$current_page-&gt;title}}{% endraw %}<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                {!! clean($current_page-&gt;content) !!}
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-footer bg-transparent&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-primary&#34;</span><span class="p">&gt;</span>{% raw %}{{ trans(&#39;Editor&#39;).&#39; : &#39;.$current_page-&gt;editor }}{% endraw %}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-primary&#34;</span><span class="p">&gt;</span>{% raw %}{{ trans(&#39;Created_at&#39;).&#39; : &#39;.$current_page-&gt;created_at }}{% endraw %}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;badge badge-pill badge-primary&#34;</span><span class="p">&gt;</span>{% raw %}{{ trans(&#39;Updated_at&#39;).&#39; : &#39;.$current_page-&gt;updated_at }}{% endraw %}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% raw %}{{-- 是否清單顯示 --}}{% endraw %}
+</span></span><span class="line"><span class="cl">@elseif($select_menu-&gt;is_list)
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-12&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card border-light&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;border: none;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-header bg-transparent&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>{% raw %}{{$select_menu-&gt;name}}{% endraw %}<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;table-responsive&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;table table-hover table-borderless&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        @foreach($menu_pages as $page)
+</span></span><span class="line"><span class="cl">                            @if($page-&gt;menu_id == $select_menu-&gt;id)
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">10%</span><span class="p">&gt;</span>{% raw %}{{ $page-&gt;updated_at-&gt;format(&#39;Y/m/d&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ route(&#39;page&#39;, [$navbar-&gt;name,$select_menu-&gt;name,$page-&gt;url]) }}{% endraw %}&#34;</span><span class="p">&gt;</span>{% raw %}{{ $page-&gt;title }}{% endraw %}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            @endif
+</span></span><span class="line"><span class="cl">                        @endforeach
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-footer pagination justify-content-center bg-transparent&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                {!! $menu_pages-&gt;links(&#34;pagination::bootstrap-4&#34;) !!}
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@else
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-12&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card border-light&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;border: none;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-header bg-transparent&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>{% raw %}{{$menu_pages-&gt;title}}{% endraw %}<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                {!! clean($menu_pages-&gt;content) !!}
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span><span class="line"><span class="cl">@endsection
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>一開始先判斷是否有 <code>QUERY</code> ，有的畫直接判斷為頁面，若無則為選單。</li>
+</ul>
+<hr>
+<h2 id="結語" class="headerLink">
+    <a href="#%e7%b5%90%e8%aa%9e" class="header-mark"></a>結語</h2><p>總結，後台新增順序為 <code>導覽列</code> &raquo; <code>選單</code> &raquo; <code>頁面</code></p>
+<p>導覽列(導覽目錄)可以有很多選單，選單(清單顯示)可以有很多頁面</p>
+<p>你可以照自己的想法去做修改🥱</p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新於 2020-06-11</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/laravel-myweb-12/index.md target="_blank" rel="noopener noreferrer">閱讀原始文檔</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="https://jhuei.com/laravel-myweb-12/" data-title="Laravel Backend Control Website - 12" data-hashtags="laravel,php,html,javascript,menu,htmlpurifier,page,navbar"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="https://jhuei.com/laravel-myweb-12/" data-hashtag="laravel"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://jhuei.com/laravel-myweb-12/" data-title="Laravel Backend Control Website - 12" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="https://jhuei.com/laravel-myweb-12/" data-title="Laravel Backend Control Website - 12"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="https://jhuei.com/laravel-myweb-12/" data-title="Laravel Backend Control Website - 12"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="https://jhuei.com/laravel-myweb-12/" data-title="Laravel Backend Control Website - 12" data-description="選單管理 - Menu Manage"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="https://jhuei.com/laravel-myweb-12/" data-title="Laravel Backend Control Website - 12" data-description="選單管理 - Menu Manage"><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="https://jhuei.com/laravel-myweb-12/" data-title="Laravel Backend Control Website - 12"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/laravel/">laravel</a>,&nbsp;<a href="/tags/php/">php</a>,&nbsp;<a href="/tags/html/">html</a>,&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/menu/">menu</a>,&nbsp;<a href="/tags/htmlpurifier/">htmlpurifier</a>,&nbsp;<a href="/tags/page/">page</a>,&nbsp;<a href="/tags/navbar/">navbar</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主頁</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/laravel-myweb-11/" class="prev" rel="prev" title="Laravel Backend Control Website - 11"><i class="fas fa-angle-left fa-fw"></i>Laravel Backend Control Website - 11</a>
+            <a href="/laravel-zip/" class="next" rel="next" title="Laravel Zip">Laravel Zip<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Jhuei</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到頂部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看評論">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"複製到剪貼簿","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本網站使用 Cookies 來改善您的瀏覽體驗."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"沒有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

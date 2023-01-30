@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ZipArchive - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/ziparchive/</link>
+        <description>ZipArchive - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/ziparchive/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel Zip</title>
+    <link>https://jhuei.com/laravel-zip/</link>
+    <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-zip/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-zip/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>壓縮下載 - Zip Download</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

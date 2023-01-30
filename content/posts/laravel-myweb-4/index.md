@@ -16,25 +16,19 @@ series_weight: 4
 
 <!--more-->
 
-### 前言
+## 前言
 
----
 [第二篇](https://jhuei.com/code/2020/04/22/laravel-myweb-2.html)提到將layout切成前後台，這次就要來製作會員系統，並且設定不同的權限。
 
-### 本篇重點
-
 ---
 
-* 會員新增、修改、刪除及顯示(CRUD)
+## 1. 會員新增
 
-### 1. 會員新增
-
----
 前台會員直接使用之前 `php artisan make:auth` 的註冊，後台的要另外建立，因為要設定權限的關係。
 
 這裡 `Model`直接使用 `app/User.php`，然後建立 `Controller`。
 
-```php
+```bash
 php artisan make:controller MemberController --resource
 ```
 
@@ -74,12 +68,13 @@ class CreateUsersTable extends Migration
 
 ```
 
-{: .notice--success}
+{{< admonition type=info title="" open=true >}}
 順帶一提，`up()`跟`down()`分別 就是建立與刪除。
+{{< /admonition >}}
 
 接著由於 `migration`更新的關係，所以資料庫也要一起改變:
 
-```php
+```bash
 php artisan migrate:fresh
 ```
 
@@ -367,11 +362,11 @@ public function store(Request $request)
 ```
 
 如此一來你的資料經過 `驗證` 後就會寫入資料庫。
-<br>
-
-### 2. 會員修改
 
 ---
+
+## 2. 會員修改
+
 萬事起頭難，接下來你會發現就是新增 `blade` 然後在 `controller` 設定操作。
 
 在 `controller` 的 `edit($id)` 加入 :
@@ -562,11 +557,10 @@ public function update(Request $request, $id)
 ```
 
 沒意外應該是可以成功修改。
-<br>
-
-### 3. 會員刪除
 
 ---
+
+## 3. 會員刪除
 
 這個部分最簡單，我們總是習慣捨去。
 
@@ -581,11 +575,10 @@ public function destroy($id)
 ```
 
 接著只要點擊會員管理首頁的刪除按鈕即可刪除該筆資料。
-<br>
-
-### 結語
 
 ---
+## 結語
+
 我知道你在這個章節可能會看得不清楚，比如
 
 * 為什麼要 `return back()->with('success', '會員刪除成功 !');`

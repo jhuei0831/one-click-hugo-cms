@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Laravel Backend Control Website - 5 - Jhuei Yummy</title><meta name="Description" content="Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware"><meta property="og:title" content="Laravel Backend Control Website - 5" />
+<meta property="og:description" content="Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jhuei.com/laravel-myweb-5/" /><meta property="og:image" content="https://jhuei.com/laravel-myweb-5/feature.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-30T00:00:00+00:00" /><meta property="og:site_name" content="Jhuei Yummy" />
+<meta property="og:see_also" content="https://jhuei.com/laravel-myweb-1/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-2/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-3/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-4/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-6/" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jhuei.com/laravel-myweb-5/feature.jpg"/>
+<meta name="twitter:title" content="Laravel Backend Control Website - 5"/>
+<meta name="twitter:description" content="Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware"/>
+<meta name="application-name" content="Jhuei Yummy">
+<meta name="apple-mobile-web-app-title" content="Jhuei Yummy">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jhuei.com/laravel-myweb-5/" /><link rel="prev" href="https://jhuei.com/laravel-myweb-4/" /><link rel="next" href="https://jhuei.com/laravel-myweb-6/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel Backend Control Website - 5",
+        "inLanguage": "zh-tw",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jhuei.com\/laravel-myweb-5\/"
+        },"genre": "posts","keywords": "laravel, php, html, javascript, css, bootstrap, backend","wordcount":  2258 ,
+        "url": "https:\/\/jhuei.com\/laravel-myweb-5\/","datePublished": "2020-04-30T00:00:00+00:00","dateModified": "2020-04-30T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"authors": [{
+                        "@type": "Person",
+                        "name": "Kerwin"                    
+                    }],"description": "Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fas fa-file-alt'></i> 文章 </a><a class="menu-item" href="/tags/"><i class='fas fa-tag'></i> 標籤 </a><a class="menu-item" href="/categories/"><i class='fas fa-list'></i> 分類 </a><a class="menu-item" href="/series/"><i class='fas fa-folder'></i> 系列 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切換主題">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切換主題">
+                        <option value="light">淺色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟隨系統</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fas fa-file-alt'></i>文章</a><a class="menu-item" href="/tags/" title=""><i class='fas fa-tag'></i>標籤</a><a class="menu-item" href="/categories/" title=""><i class='fas fa-list'></i>分類</a><a class="menu-item" href="/series/" title=""><i class='fas fa-folder'></i>系列</a><a href="#" class="menu-item theme-select" title="切換主題">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切換主題">
+                    <option value="light">淺色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟隨系統</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目錄</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-資料送出後的訊息">1. 資料送出後的訊息</a></li>
+    <li><a href="#2-資料送出後的驗證">2. 資料送出後的驗證</a></li>
+    <li><a href="#3-權限的使用例子">3. 權限的使用例子</a></li>
+    <li><a href="#4-額外補充">4. 額外補充</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Laravel Backend Control Website - 5</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://jhuei.com/authors/kerwin'>Kerwin</a></span>
+                </span>&nbsp;<span class="post-category">收錄於 </span>&nbsp;<span class="post-category">類別 <a href="/categories/code/"><i class="far fa-folder fa-fw"></i>CODE</a></span>&nbsp;<span class="post-category">和</span>&nbsp;<span class="post-series">系列 <a href="/series/laravel-myweb/"><i class="far fa-list-alt fa-fw"></i>Laravel Backend Control Website</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-30">2020-04-30</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-04-30">2020-04-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;約 2258 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;預計閱讀 5 分鐘&nbsp;</div>
+        </div><div class="details series-nav open">
+                                <div class="details-summary series-title">
+                                    <span>系列 - Laravel Backend Control Website</span>
+                                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                                </div>
+                                <div class="details-content series-content">
+                                    <nav>
+                                        <ul>
+                                                    <li><a href="/laravel-myweb-1/">Laravel Backend Control Website - 1</a></li>
+                                                    <li><a href="/laravel-myweb-2/">Laravel Backend Control Website - 2</a></li>
+                                                    <li><a href="/laravel-myweb-3/">Laravel Backend Control Website - 3</a></li>
+                                                    <li><a href="/laravel-myweb-4/">Laravel Backend Control Website - 4</a></li><li><span class="active">Laravel Backend Control Website - 5</span></li>
+                                                    <li><a href="/laravel-myweb-6/">Laravel Backend Control Website - 6</a></li>
+                                                    <li><a href="/laravel-myweb-7/">Laravel Backend Control Website - 7</a></li>
+                                                    <li><a href="/laravel-myweb-8/">Laravel Backend Control Website - 8</a></li>
+                                                    <li><a href="/laravel-myweb-9/">Laravel Backend Control Website - 9</a></li>
+                                                    <li><a href="/laravel-myweb-10/">Laravel Backend Control Website - 10</a></li>
+                                                    <li><a href="/laravel-myweb-11/">Laravel Backend Control Website - 11</a></li>
+                                                    <li><a href="/laravel-myweb-12/">Laravel Backend Control Website - 12</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目錄</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-資料送出後的訊息">1. 資料送出後的訊息</a></li>
+    <li><a href="#2-資料送出後的驗證">2. 資料送出後的驗證</a></li>
+    <li><a href="#3-權限的使用例子">3. 權限的使用例子</a></li>
+    <li><a href="#4-額外補充">4. 額外補充</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware</p>
+</blockquote>
+<h2 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p><a href="https://jhuei.com/code/2020/04/29/laravel-myweb-4.html" target="_blank" rel="noopener noreferrer">第四篇</a> 建立了會員系統，但其中有些東西並沒有交代的很清楚。</p>
+<p>比如 <code>資料驗證</code>、<code>新增、修改、刪除後的訊息</code>以及 <code>權限</code>的利用，這篇將盡可能的解釋。</p>
+<hr>
+<h2 id="1-資料送出後的訊息" class="headerLink">
+    <a href="#1-%e8%b3%87%e6%96%99%e9%80%81%e5%87%ba%e5%be%8c%e7%9a%84%e8%a8%8a%e6%81%af" class="header-mark"></a>1. 資料送出後的訊息</h2><p>在 <a href="https://jhuei.com/code/2020/04/29/laravel-myweb-4.html" target="_blank" rel="noopener noreferrer">第四篇</a> 可以看到儲存或刪除資料後都會有 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">return</span> <span class="nx">back</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span><span class="s1">&#39;會員新增成功 !&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這行的意思是退回上一個位置並顯示成功的訊息框，訊息內容為會員新增成功。</p>
+<p><a href="https://laravel.com/docs/5.8/responses#redirects" target="_blank" rel="noopener noreferrer">相關文件</a>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">那這時會有個問題，阿怎麼沒跑出來  ?  這個簡單，因為還沒建立訊息框。</div>
+        </div>
+    </div></p>
+<p>首先要建立 <code>views/_partials/message.blade.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">@if ($message = Session::get(&#39;success&#39;))
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alert alert-success alert-block text-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;alert&#34;</span><span class="p">&gt;</span>×<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{% raw %}{{ $message }}{% endraw %}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">@if ($message = Session::get(&#39;error&#39;))
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alert alert-danger alert-block text-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;alert&#34;</span><span class="p">&gt;</span>×<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{% raw %}{{ $message }}{% endraw %}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">@if ($message = Session::get(&#39;warning&#39;))
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alert alert-warning alert-block text-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;alert&#34;</span><span class="p">&gt;</span>×<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{% raw %}{{ $message }}{% endraw %}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">@if ($message = Session::get(&#39;info&#39;))
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alert alert-info alert-block text-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;alert&#34;</span><span class="p">&gt;</span>×<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{% raw %}{{ $message }}{% endraw %}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">@if ($message = Session::get(&#39;nodata&#39;))
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alert alert-info alert-block text-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;alert&#34;</span><span class="p">&gt;</span>×<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{% raw %}{{ $message }}{% endraw %}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">@if ($errors-&gt;any())
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alert alert-danger text-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;close&#34;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&#34;alert&#34;</span><span class="p">&gt;</span>×<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl"> {% raw %}{{ trans(&#39;Please check the form below for errors&#39;) }}{% endraw %}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接著到 <code>_layouts/manage/app.blade.php</code> 中加入 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl">   ...略...
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;app&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        @include(&#39;_partials.manage.nav&#39;)
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">main</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;py-4&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            @include(&#39;_partials.message&#39;) <span class="c">&lt;!-- 這行 --&gt;</span>
+</span></span><span class="line"><span class="cl">            @yield(&#39;content&#39;)
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搞定 ! 回到會員管理新增一筆資料看看 !</p>
+<p>沒意外新增成功上方會出現成功的訊息。</p>
+<figure><a class="lightgallery" href="https://i.imgur.com/aMP6lSD.png" title="https://i.imgur.com/aMP6lSD.png" data-thumbnail="https://i.imgur.com/aMP6lSD.png" data-sub-html="<h2>message</h2>">
+        <img
+            
+            loading="lazy"
+            src="https://i.imgur.com/aMP6lSD.png"
+            srcset="https://i.imgur.com/aMP6lSD.png, https://i.imgur.com/aMP6lSD.png 1.5x, https://i.imgur.com/aMP6lSD.png 2x"
+            sizes="auto"
+            alt="https://i.imgur.com/aMP6lSD.png">
+    </a><figcaption class="image-caption">message</figcaption>
+    </figure>
+<hr>
+<h2 id="2-資料送出後的驗證" class="headerLink">
+    <a href="#2-%e8%b3%87%e6%96%99%e9%80%81%e5%87%ba%e5%be%8c%e7%9a%84%e9%a9%97%e8%ad%89" class="header-mark"></a>2. 資料送出後的驗證</h2><p>想一想，會出現會員新增成功，就代表你通過了驗證。</p>
+<p>以下是新增會員的驗證 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$data</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;max:255&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;max:255&#39;</span><span class="p">,</span> <span class="s1">&#39;unique:users&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;min:1&#39;</span><span class="p">,</span> <span class="s1">&#39;confirmed&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;permission&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;max:5&#39;</span><span class="p">,</span> <span class="s1">&#39;min:0&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">]);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><code>$request</code> 的解釋請看<a href="https://laravel.com/docs/5.8/requests" target="_blank" rel="noopener noreferrer">這邊</a> <br><br>
+簡單來說就是利用 <code>request</code> 來取得輸入資料，並且使用 <a href="https://laravel.com/docs/5.8/validation" target="_blank" rel="noopener noreferrer">validate</a> 建立驗證。 <br><br>
+可以作為條件的有<a href="https://laravel.com/docs/5.8/validation#available-validation-rules" target="_blank" rel="noopener noreferrer">這些</a>。</div>
+        </div>
+    </div>
+<p>上面的信箱驗證就是使用了  <code>必填欄位</code> 、 <code>字串</code> 、<code>格式為信箱</code>、<code>最大值255</code> 、<code>唯一:資料表為users</code></p>
+<p>前面是驗證的設定，接下來看到頁面 <code>create.blade.php</code> 的信箱輸入 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group row&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-4 col-form-label text-md-right&#34;</span><span class="p">&gt;</span>{% raw %}{{ trans(&#39;E-Mail Address&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-6&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control @error(&#39;email&#39;) is-invalid @enderror&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;email&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;email&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ old(&#39;email&#39;) }}{% endraw %}&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ trans(&#39;E-Mail Address&#39;) }}{% endraw %}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        @error(&#39;email&#39;)
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;invalid-feedback&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;alert&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{% raw %}{{ $message }}{% endraw %}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        @enderror
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到 input 中的 <code>@error('email') is-invalid @enderror</code> ，<code>@error</code> 可以判斷剛剛所設定的驗證是否存在，只要驗證有錯就會在 <code>$message</code> 顯示錯誤訊息。</p>
+<p>搭配 <code>Bootstrap</code> 的 <code>is-valid</code> 以及 <code>valid-feedback</code> 來優化顯示錯誤訊息。</p>
+<figure><a class="lightgallery" href="https://i.imgur.com/zMvJEaS.png" title="https://i.imgur.com/zMvJEaS.png" data-thumbnail="https://i.imgur.com/zMvJEaS.png" data-sub-html="<h2>validation</h2>">
+        <img
+            
+            loading="lazy"
+            src="https://i.imgur.com/zMvJEaS.png"
+            srcset="https://i.imgur.com/zMvJEaS.png, https://i.imgur.com/zMvJEaS.png 1.5x, https://i.imgur.com/zMvJEaS.png 2x"
+            sizes="auto"
+            alt="https://i.imgur.com/zMvJEaS.png">
+    </a><figcaption class="image-caption">validation</figcaption>
+    </figure>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">表單驗證其實可以自訂，不一定要使用 <code>use Illuminate\Http\Request;</code> 的 <code>Request</code>，以後再說😆</div>
+        </div>
+    </div>
+<hr>
+<h2 id="3-權限的使用例子" class="headerLink">
+    <a href="#3-%e6%ac%8a%e9%99%90%e7%9a%84%e4%bd%bf%e7%94%a8%e4%be%8b%e5%ad%90" class="header-mark"></a>3. 權限的使用例子</h2><p>既然 <a href="https://jhuei.com/code/2020/04/29/laravel-myweb-4.html" target="_blank" rel="noopener noreferrer">第四篇</a> 建立了會員帳號的權限，以下就提出一些使用的例子。</p>
+<p>比如我們規定 <code>權限大於0</code> 才能進入後台，這裡就要提到一下 <a href="https://laravel.com/docs/5.8/middleware" target="_blank" rel="noopener noreferrer">中介層 / middleware</a>。</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">中介層提供一個方便的機制來過濾進入應用程式的 HTTP 請求。</div>
+        </div>
+    </div>
+<p>之前我們透過 <code>php artisan:make auth</code> 的指令創建了名為 <code>auth</code> 的中介層 <code>./app/Http/Middleware/Authenticate.php</code> 。</p>
+<p>中介層名字定義在 <code>./app/Http/Kernel.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App\Http</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Foundation\Http\Kernel</span> <span class="k">as</span> <span class="nx">HttpKernel</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Kernel</span> <span class="k">extends</span> <span class="nx">HttpKernel</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$routeMiddleware</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="nx">\App\Http\Middleware\Admin</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>      <span class="o">&lt;!--</span> <span class="nx">等等要加入的</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;auth&#39;</span> <span class="o">=&gt;</span> <span class="nx">\App\Http\Middleware\Authenticate</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">];</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到 <code>admin</code> 和 <code>auth</code> 兩個中介層，<code>admin</code> 是等等要創立的，意義是管理員才能進入後台 ; 而 <code>auth</code> 代表是否有登入。</p>
+<p>輸入以下指令生成中介層 <code>Admin.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">php artisan make:middleware Admin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>將內容改為 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App\Http\Middleware</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Closure</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Admin</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">Closure</span> <span class="nv">$next</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">permission</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nv">$next</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的意思就是如果登入權限不等於0才能存取路由，否則就要導回前台頁面。(<a href="https://laravel.com/docs/5.8/authentication" target="_blank" rel="noopener noreferrer">auth用法</a>)</p>
+<p>接下來將中介層加入 <code>Kernel.php</code> 後就到 <code>web.php</code> 中加入中介層。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/manage&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;manage.index&#39;</span><span class="p">);})</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">,</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;manage&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">prefix</span><span class="p">(</span><span class="s1">&#39;manage&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">,</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;member&#39;</span><span class="p">,</span> <span class="s1">&#39;MemberController&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//必須登入且權限大於零才能進入後台
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以創立一個權限為 <code>一般使用者</code> 的試看看登入後進入<a href="http://localhost:8000/manage/" target="_blank" rel="noopener noreferrer">後台</a>。</p>
+<p>再來的例子是帳號權限是否可以對會員帳號進行新增修改，請在 <code>_partial/manage/nav.blade.php</code> 做以下修改 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-expand-md navbar-light bg-white shadow-sm&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ url(&#39;/manage&#39;) }}{% endraw %}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {% raw %}{{ config(&#39;app.name&#39;, &#39;Laravel&#39;) }}{% endraw %}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;collapse&#34;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&#34;#navbarSupportedContent&#34;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&#34;navbarSupportedContent&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ __(&#39;Toggle navigation&#39;) }}{% endraw %}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-toggler-icon&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;collapse navbar-collapse&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;navbarSupportedContent&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!-- Left Side Of Navbar --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-nav mr-auto&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                @if (Auth::check() <span class="err">&amp;&amp;</span> Auth::user()-&gt;permission &gt; &#39;4&#39;)
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ route(&#39;member.index&#39;) }}{% endraw %}&#34;</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Member&#39;).__(&#39;Manage&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                @endif
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c">&lt;!-- Right Side Of Navbar --&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-nav ml-auto&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ route(&#39;home&#39;) }}{% endraw %}&#34;</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Fontstage&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item dropdown&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;navbarDropdown&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link dropdown-toggle&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&#34;dropdown&#34;</span> <span class="na">aria-haspopup</span><span class="o">=</span><span class="s">&#34;true&#34;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&#34;false&#34;</span> <span class="na">v-pre</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        {% raw %}{{ Auth::user()-&gt;name }}{% endraw %} <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;caret&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dropdown-menu dropdown-menu-right&#34;</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&#34;navbarDropdown&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dropdown-item&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ route(&#39;logout&#39;) }}{% endraw %}&#34;</span>
+</span></span><span class="line"><span class="cl">                           <span class="na">onclick</span><span class="o">=</span><span class="s">&#34;event.preventDefault();
+</span></span></span><span class="line"><span class="cl"><span class="s">                                         document.getElementById(&#39;logout-form&#39;).submit();&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            {% raw %}{{ trans(&#39;Logout&#39;) }}{% endraw %}
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;logout-form&#34;</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ route(&#39;logout&#39;) }}{% endraw %}&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;POST&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;display: none;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            @csrf
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到其中的 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">@if (Auth::check() <span class="err">&amp;&amp;</span> Auth::user()-&gt;permission &gt; &#39;4&#39;)
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-item&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% raw %}{{ route(&#39;member.index&#39;) }}{% endraw %}&#34;</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Member&#39;).__(&#39;Manage&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endif
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述表示權限不大於4無法進入會員管理的頁面。</p>
+<p>另外你可以在Controller中加入 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">check</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">permission</span> <span class="o">&lt;</span> <span class="s1">&#39;5&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">back</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;warning&#39;</span><span class="p">,</span> <span class="s1">&#39;權限不足以訪問該頁面 !&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;manage.member.create&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述表示權限小於5無法進入會員新增的頁面。</p>
+<p>諸如此類的例子，就交給你自由發揮了😉</p>
+<hr>
+<h2 id="4-額外補充" class="headerLink">
+    <a href="#4-%e9%a1%8d%e5%a4%96%e8%a3%9c%e5%85%85" class="header-mark"></a>4. 額外補充</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">php artisan make:controller MemberController --resource
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>--resource</code> 代表建立了一個包含CRUD的控制器。</p>
+<table>
+<thead>
+<tr>
+<th>函數</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index()</td>
+<td>顯示資料（一般是列表）</td>
+</tr>
+<tr>
+<td>create()</td>
+<td>建立新資料（通常是表單界面）</td>
+</tr>
+<tr>
+<td>store(Request $request)</td>
+<td>儲存資料</td>
+</tr>
+<tr>
+<td>show($id)</td>
+<td>顯示某筆資料</td>
+</tr>
+<tr>
+<td>edit($id)</td>
+<td>編輯某筆資料（通常是表單界面）</td>
+</tr>
+<tr>
+<td>update(Request $request, $id)</td>
+<td>更新某筆資料</td>
+</tr>
+<tr>
+<td>destroy($id)</td>
+<td>刪除某筆資料</td>
+</tr>
+</tbody>
+</table>
+<p>如果要建立一個空的控制器 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">php artisan make:controller MemberController
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果要同時建立 <code>model</code>、<code>migration</code>、<code>controller --resource</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">php artisan make:model Member -mcr
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>參數</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-m</td>
+<td>為model建立一個數據庫</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>為model建立一個控制器</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>為控制器加入  &ndash;resource 參數</td>
+</tr>
+</tbody>
+</table>
+<p>可以用下列指令看到所有可用選項 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">php artisan make:model --help
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Hope it will help !</p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新於 2020-04-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/laravel-myweb-5/index.md target="_blank" rel="noopener noreferrer">閱讀原始文檔</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="https://jhuei.com/laravel-myweb-5/" data-title="Laravel Backend Control Website - 5" data-hashtags="laravel,php,html,javascript,css,bootstrap,backend"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="https://jhuei.com/laravel-myweb-5/" data-hashtag="laravel"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://jhuei.com/laravel-myweb-5/" data-title="Laravel Backend Control Website - 5" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="https://jhuei.com/laravel-myweb-5/" data-title="Laravel Backend Control Website - 5"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="https://jhuei.com/laravel-myweb-5/" data-title="Laravel Backend Control Website - 5"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="https://jhuei.com/laravel-myweb-5/" data-title="Laravel Backend Control Website - 5" data-description="Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="https://jhuei.com/laravel-myweb-5/" data-title="Laravel Backend Control Website - 5" data-description="Laravel 驗證、訊息、中介層  - Validation 、Message、Middleware"><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="https://jhuei.com/laravel-myweb-5/" data-title="Laravel Backend Control Website - 5"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/laravel/">laravel</a>,&nbsp;<a href="/tags/php/">php</a>,&nbsp;<a href="/tags/html/">html</a>,&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/css/">css</a>,&nbsp;<a href="/tags/bootstrap/">bootstrap</a>,&nbsp;<a href="/tags/backend/">backend</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主頁</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/laravel-myweb-4/" class="prev" rel="prev" title="Laravel Backend Control Website - 4"><i class="fas fa-angle-left fa-fw"></i>Laravel Backend Control Website - 4</a>
+            <a href="/laravel-myweb-6/" class="next" rel="next" title="Laravel Backend Control Website - 6">Laravel Backend Control Website - 6<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Jhuei</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到頂部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看評論">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"複製到剪貼簿","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本網站使用 Cookies 來改善您的瀏覽體驗."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"沒有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

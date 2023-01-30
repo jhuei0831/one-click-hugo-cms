@@ -16,41 +16,22 @@ series_weight: 6
 
 <!--more-->
 
-### 前言
+## 前言
 
----
 Hello 大家 ! [上一篇](https://jhuei.com/code/2020/04/30/laravel-myweb-5.html) 明確地將前後台利用權限分開，如此一來，後台控制前台的網站已經漸漸有了雛型。而這篇將完成導覽列的管理，完成後即可從後台新增、修改前台所顯示的導覽列，並且使用拖曳的方式進行排序 (可在手機端使用)。
-<br><br>
-
-### 本篇重點
 
 ---
 
-* [新增Controller、Model、Migration](#cmm)
-* [修改Migration](#migration)
-* [修改Model](#model)
-* [加入路由](#route)
-* [建立視圖](#view)
-* [導覽列新增](#create)
-* [導覽列修改](#edit)
-* [導覽列刪除](#delete)
-* [導覽列前台顯示](#font)
-* [補充](#sup)<br><br>
-
-{: id='cmm'}
-
-### 1. 新增Controller、Model、Migration [🔝](#top)
-
----
+## 1. 新增Controller、Model、Migration
 
 ```bash
 // 一次性建立
 php artisan make:model Navbar -mcr
 ```
 
-{: id='migration'}
+---
 
-### 2. 修改Migration [🔝](#top)
+## 2. 修改Migration
 
 ```php
 <?php
@@ -87,11 +68,9 @@ class CreateNavbarsTable extends Migration
 php artisan migrate
 ```
 
-{: id='model'}
-
-### 3. 修改Model [🔝](#top)
-
 ---
+
+## 3. 修改Model
 
 ```php
 <?php
@@ -112,11 +91,9 @@ class Navbar extends Model
 }
 ```
 
-{: id='route'}
-
-### 4. 加入路由 [🔝](#top)
-
 ---
+
+## 4. 加入路由
 
 ```php
 Route::prefix('manage')->middleware('auth','admin')->group(function(){
@@ -125,11 +102,9 @@ Route::prefix('manage')->middleware('auth','admin')->group(function(){
 });
 ```
 
-{: id='view'}
-
-### 5. 建立視圖 [🔝](#top)
-
 ---
+
+## 5. 建立視圖
 
 ```treeview
 views/
@@ -144,11 +119,10 @@ views/
         └── index.blade.php
 ```
 
-{: id='create'}
-
-### 6. 導覽列新增 [🔝](#top)
-
 ---
+
+## 6. 導覽列新增
+
 先建立導覽列管理首頁 `index.blade.php` :
 
 ```php
@@ -359,11 +333,10 @@ public function store(Request $request)
 }
 ```
 
-{: id='edit'}
-
-### 7. 導覽列修改 [🔝](#top)
-
 ---
+
+## 7. 導覽列修改
+
 `edit.blade.php` :
 
 ```php
@@ -515,11 +488,10 @@ public function update(Request $request, $id)
 }
 ```
 
-{: id='delete'}
-
-### 8. 導覽列刪除 [🔝](#top)
-
 ---
+
+## 8. 導覽列刪除
+
 `NavbarController.php` :
 
 ```php
@@ -533,11 +505,10 @@ public function destroy($id)
 }
 ```
 
-{: id='font'}
-
-### 9. 導覽列前台顯示 [🔝](#top)
-
 ---
+
+## 9. 導覽列前台顯示
+
 `web.php`
 
 ```php
@@ -629,11 +600,10 @@ View::composer(['*'], function ($view) {
 </nav>
 ```
 
-{: id='sup'}
-
-### 10. 補充 [🔝](#top)
-
 ---
+
+## 10. 補充
+
 照著上面作，沒意外前台應該會顯示後台所新增的導覽列。
 [![navbar](https://i.imgur.com/9pX0tZD.png)](https://i.imgur.com/9pX0tZD.png)
 

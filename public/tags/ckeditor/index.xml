@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ckeditor - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/ckeditor/</link>
+        <description>ckeditor - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Mon, 13 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/ckeditor/" rel="self" type="application/rss+xml" /><item>
+    <title>Ckeditor &#43; Htmlpurifier allow attribute</title>
+    <link>https://jhuei.com/ckeditor-htmlpurifier-allow-attribute/</link>
+    <pubDate>Mon, 13 Apr 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/ckeditor-htmlpurifier-allow-attribute/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/ckeditor-htmlpurifier-allow-attribute/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Allow the attribute as you want.</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

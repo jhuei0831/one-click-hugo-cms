@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>XSS - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/xss/</link>
+        <description>XSS - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Fri, 22 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/xss/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel Backend Control Website - 9</title>
+    <link>https://jhuei.com/laravel-myweb-9/</link>
+    <pubDate>Fri, 22 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-9/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-9/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel XSS Defense by use Htmlpurifier</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

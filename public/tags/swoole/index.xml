@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>swoole - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/swoole/</link>
+        <description>swoole - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Wed, 06 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/swoole/" rel="self" type="application/rss+xml" /><item>
+    <title>Install Swoole on Windows</title>
+    <link>https://jhuei.com/swoole-install-on-windows/</link>
+    <pubDate>Wed, 06 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/swoole-install-on-windows/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/swoole-install-on-windows/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>在Windows環境安裝Swoole - Install Swoole on Windows</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

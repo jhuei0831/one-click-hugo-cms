@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>menu - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/menu/</link>
+        <description>menu - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Thu, 11 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/menu/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel Backend Control Website - 12</title>
+    <link>https://jhuei.com/laravel-myweb-12/</link>
+    <pubDate>Thu, 11 Jun 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-12/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-12/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>選單管理 - Menu Manage</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 11</title>
+    <link>https://jhuei.com/laravel-myweb-11/</link>
+    <pubDate>Wed, 10 Jun 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-11/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-11/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>選單管理 - Menu Manage</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

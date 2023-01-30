@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>excel - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/excel/</link>
+        <description>excel - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Tue, 07 Jul 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/excel/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel Excel Export - Basic</title>
+    <link>https://jhuei.com/laravel-excel-export-basic/</link>
+    <pubDate>Tue, 07 Jul 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-excel-export-basic/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-excel-export-basic/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 匯出基礎篇 - Basic Laravel Export</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

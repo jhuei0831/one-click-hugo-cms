@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Laravel Backend Control Website - 1 - Jhuei Yummy</title><meta name="Description" content="Laravel 網站設置和預計設計目標 - Website settings and expected design goals"><meta property="og:title" content="Laravel Backend Control Website - 1" />
+<meta property="og:description" content="Laravel 網站設置和預計設計目標 - Website settings and expected design goals" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jhuei.com/laravel-myweb-1/" /><meta property="og:image" content="https://jhuei.com/laravel-myweb-1/feature.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-21T00:00:00+00:00" /><meta property="og:site_name" content="Jhuei Yummy" />
+<meta property="og:see_also" content="https://jhuei.com/laravel-myweb-2/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-3/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-4/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-5/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-6/" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jhuei.com/laravel-myweb-1/feature.jpg"/>
+<meta name="twitter:title" content="Laravel Backend Control Website - 1"/>
+<meta name="twitter:description" content="Laravel 網站設置和預計設計目標 - Website settings and expected design goals"/>
+<meta name="application-name" content="Jhuei Yummy">
+<meta name="apple-mobile-web-app-title" content="Jhuei Yummy">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jhuei.com/laravel-myweb-1/" /><link rel="prev" href="https://jhuei.com/stop-jekyll-serve/" /><link rel="next" href="https://jhuei.com/translate-big-parantheses-markdown/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel Backend Control Website - 1",
+        "inLanguage": "zh-tw",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jhuei.com\/laravel-myweb-1\/"
+        },"genre": "posts","keywords": "laravel, php, html, javascript, css, bootstrap, backend","wordcount":  534 ,
+        "url": "https:\/\/jhuei.com\/laravel-myweb-1\/","datePublished": "2020-04-21T00:00:00+00:00","dateModified": "2020-04-21T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"authors": [{
+                        "@type": "Person",
+                        "name": "Kerwin"                    
+                    }],"description": "Laravel 網站設置和預計設計目標 - Website settings and expected design goals"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fas fa-file-alt'></i> 文章 </a><a class="menu-item" href="/tags/"><i class='fas fa-tag'></i> 標籤 </a><a class="menu-item" href="/categories/"><i class='fas fa-list'></i> 分類 </a><a class="menu-item" href="/series/"><i class='fas fa-folder'></i> 系列 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切換主題">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切換主題">
+                        <option value="light">淺色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟隨系統</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fas fa-file-alt'></i>文章</a><a class="menu-item" href="/tags/" title=""><i class='fas fa-tag'></i>標籤</a><a class="menu-item" href="/categories/" title=""><i class='fas fa-list'></i>分類</a><a class="menu-item" href="/series/" title=""><i class='fas fa-folder'></i>系列</a><a href="#" class="menu-item theme-select" title="切換主題">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切換主題">
+                    <option value="light">淺色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟隨系統</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目錄</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#使用工具">使用工具</a></li>
+    <li><a href="#目標">目標</a></li>
+    <li><a href="#成品圖">成品圖</a></li>
+    <li><a href="#設置">設置</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Laravel Backend Control Website - 1</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://jhuei.com/authors/kerwin'>Kerwin</a></span>
+                </span>&nbsp;<span class="post-category">收錄於 </span>&nbsp;<span class="post-category">類別 <a href="/categories/code/"><i class="far fa-folder fa-fw"></i>CODE</a></span>&nbsp;<span class="post-category">和</span>&nbsp;<span class="post-series">系列 <a href="/series/laravel-myweb/"><i class="far fa-list-alt fa-fw"></i>Laravel Backend Control Website</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-21">2020-04-21</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-04-21">2020-04-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;約 534 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;預計閱讀 2 分鐘&nbsp;</div>
+        </div><div class="details series-nav open">
+                                <div class="details-summary series-title">
+                                    <span>系列 - Laravel Backend Control Website</span>
+                                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                                </div>
+                                <div class="details-content series-content">
+                                    <nav>
+                                        <ul><li><span class="active">Laravel Backend Control Website - 1</span></li>
+                                                    <li><a href="/laravel-myweb-2/">Laravel Backend Control Website - 2</a></li>
+                                                    <li><a href="/laravel-myweb-3/">Laravel Backend Control Website - 3</a></li>
+                                                    <li><a href="/laravel-myweb-4/">Laravel Backend Control Website - 4</a></li>
+                                                    <li><a href="/laravel-myweb-5/">Laravel Backend Control Website - 5</a></li>
+                                                    <li><a href="/laravel-myweb-6/">Laravel Backend Control Website - 6</a></li>
+                                                    <li><a href="/laravel-myweb-7/">Laravel Backend Control Website - 7</a></li>
+                                                    <li><a href="/laravel-myweb-8/">Laravel Backend Control Website - 8</a></li>
+                                                    <li><a href="/laravel-myweb-9/">Laravel Backend Control Website - 9</a></li>
+                                                    <li><a href="/laravel-myweb-10/">Laravel Backend Control Website - 10</a></li>
+                                                    <li><a href="/laravel-myweb-11/">Laravel Backend Control Website - 11</a></li>
+                                                    <li><a href="/laravel-myweb-12/">Laravel Backend Control Website - 12</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目錄</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#使用工具">使用工具</a></li>
+    <li><a href="#目標">目標</a></li>
+    <li><a href="#成品圖">成品圖</a></li>
+    <li><a href="#設置">設置</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Laravel 網站設置和預計設計目標 - Website settings and expected design goals</p>
+</blockquote>
+<h2 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>前陣子開始接觸 Laravel ，算是第一個接觸的MVC框架 ，學了一段時間後就想做一個小品當作練習。這個練習的目的就是讓我熟悉 <code>Model</code>、<code>View</code>、<code>Controller</code> 三者之間的愛恨糾葛😂。不會講得很細，就是分享我遇到的問題以及解決的方法。</p>
+<hr>
+<h2 id="使用工具" class="headerLink">
+    <a href="#%e4%bd%bf%e7%94%a8%e5%b7%a5%e5%85%b7" class="header-mark"></a>使用工具</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">工具</th>
+<th style="text-align:center">Laravel</th>
+<th style="text-align:center">PHP</th>
+<th style="text-align:center">MySQL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">版本</td>
+<td style="text-align:center">5.8</td>
+<td style="text-align:center">7.2</td>
+<td style="text-align:center">5.7</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="目標" class="headerLink">
+    <a href="#%e7%9b%ae%e6%a8%99" class="header-mark"></a>目標</h2><p>完成一個後端控制前台發布文章、導覽列、消息、輪播、訊息的網站。</p>
+<hr>
+<h2 id="成品圖" class="headerLink">
+    <a href="#%e6%88%90%e5%93%81%e5%9c%96" class="header-mark"></a>成品圖</h2><figure><a class="lightgallery" href="https://i.imgur.com/pA0CUz0.png" title="https://i.imgur.com/pA0CUz0.png" data-thumbnail="https://i.imgur.com/pA0CUz0.png" data-sub-html="<h2>fontend</h2>">
+        <img
+            
+            loading="lazy"
+            src="https://i.imgur.com/pA0CUz0.png"
+            srcset="https://i.imgur.com/pA0CUz0.png, https://i.imgur.com/pA0CUz0.png 1.5x, https://i.imgur.com/pA0CUz0.png 2x"
+            sizes="auto"
+            alt="https://i.imgur.com/pA0CUz0.png">
+    </a><figcaption class="image-caption">fontend</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="https://i.imgur.com/GMe8NcD.png" title="https://i.imgur.com/GMe8NcD.png" data-thumbnail="https://i.imgur.com/GMe8NcD.png" data-sub-html="<h2>backend</h2>">
+        <img
+            
+            loading="lazy"
+            src="https://i.imgur.com/GMe8NcD.png"
+            srcset="https://i.imgur.com/GMe8NcD.png, https://i.imgur.com/GMe8NcD.png 1.5x, https://i.imgur.com/GMe8NcD.png 2x"
+            sizes="auto"
+            alt="https://i.imgur.com/GMe8NcD.png">
+    </a><figcaption class="image-caption">backend</figcaption>
+    </figure>
+<hr>
+<h2 id="設置" class="headerLink">
+    <a href="#%e8%a8%ad%e7%bd%ae" class="header-mark"></a>設置</h2><p>這次使用的是<code>5.8</code> 版本的Laravel ，所以先建立一個資料夾 <code>myweb</code> 。</p>
+<p>建立Laravel 5.8 <code>composer create-project --prefer-dist laravel/laravel myweb &quot;5.8.*&quot;</code></p>
+<p>之後滑進去 <code>cd myweb</code></p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">請自行安裝所需要的環境及套件，Composer 和 xampp 等等</div>
+        </div>
+    </div>
+<p>之後在 MySQL 建立資料庫 <code>myweb</code> ， 並在 <code>.env</code> 中將資料庫相關資料填上。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DB_CONNECTION=mysql
+</span></span><span class="line"><span class="cl">DB_HOST=127.0.0.1
+</span></span><span class="line"><span class="cl">DB_PORT=3306
+</span></span><span class="line"><span class="cl">DB_DATABASE=myweb
+</span></span><span class="line"><span class="cl">DB_USERNAME=username
+</span></span><span class="line"><span class="cl">DB_PASSWORD=password
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>資料庫設定完後，Laravel 創建完成後 <code>php artisan make:auth</code>，這一步的目的是建立基本的用戶認證，如果之後你要自己建立也行，問題不大。</p>
+<p>接著在資料庫建立資料表，運行<code>php artisan migrate</code>，沒意外應該是會順利成功。</p>
+<p>你到<strong>phpmyadmin</strong>的<strong>myweb</strong>資料庫應該可以看到建立好的三個資料表。</p>
+<p>最後執行 <code>php artisan serve</code> 開始運行 laravel ，並到 網址<code>http://127.0.0.1:8000/</code>，成功看到下圖就沒事可以去看個<a href="https://laravel.com/docs/5.8/readme" target="_blank" rel="noopener noreferrer">Laravel Document</a> 壓壓驚了。</p>
+<figure><a class="lightgallery" href="https://i.imgur.com/vo0yJtw.png" title="https://i.imgur.com/vo0yJtw.png" data-thumbnail="https://i.imgur.com/vo0yJtw.png" data-sub-html="<h2>laravel</h2>">
+        <img
+            
+            loading="lazy"
+            src="https://i.imgur.com/vo0yJtw.png"
+            srcset="https://i.imgur.com/vo0yJtw.png, https://i.imgur.com/vo0yJtw.png 1.5x, https://i.imgur.com/vo0yJtw.png 2x"
+            sizes="auto"
+            alt="https://i.imgur.com/vo0yJtw.png">
+    </a><figcaption class="image-caption">laravel</figcaption>
+    </figure>
+<blockquote>
+<p>❤❤  貼心小提醒，記得版控ㄛ ❤❤</p>
+</blockquote></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新於 2020-04-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/laravel-myweb-1/index.md target="_blank" rel="noopener noreferrer">閱讀原始文檔</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="https://jhuei.com/laravel-myweb-1/" data-title="Laravel Backend Control Website - 1" data-hashtags="laravel,php,html,javascript,css,bootstrap,backend"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="https://jhuei.com/laravel-myweb-1/" data-hashtag="laravel"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://jhuei.com/laravel-myweb-1/" data-title="Laravel Backend Control Website - 1" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="https://jhuei.com/laravel-myweb-1/" data-title="Laravel Backend Control Website - 1"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="https://jhuei.com/laravel-myweb-1/" data-title="Laravel Backend Control Website - 1"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="https://jhuei.com/laravel-myweb-1/" data-title="Laravel Backend Control Website - 1" data-description="Laravel 網站設置和預計設計目標 - Website settings and expected design goals"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="https://jhuei.com/laravel-myweb-1/" data-title="Laravel Backend Control Website - 1" data-description="Laravel 網站設置和預計設計目標 - Website settings and expected design goals"><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="https://jhuei.com/laravel-myweb-1/" data-title="Laravel Backend Control Website - 1"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/laravel/">laravel</a>,&nbsp;<a href="/tags/php/">php</a>,&nbsp;<a href="/tags/html/">html</a>,&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/css/">css</a>,&nbsp;<a href="/tags/bootstrap/">bootstrap</a>,&nbsp;<a href="/tags/backend/">backend</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主頁</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/stop-jekyll-serve/" class="prev" rel="prev" title="Stop Jekyll serve (127.0.0.1:4000)"><i class="fas fa-angle-left fa-fw"></i>Stop Jekyll serve (127.0.0.1:4000)</a>
+            <a href="/translate-big-parantheses-markdown/" class="next" rel="next" title="Translate Big Parantheses in Markdown">Translate Big Parantheses in Markdown<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Jhuei</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到頂部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看評論">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"複製到剪貼簿","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本網站使用 Cookies 來改善您的瀏覽體驗."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"沒有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

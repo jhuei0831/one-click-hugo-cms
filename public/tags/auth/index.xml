@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>auth - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/auth/</link>
+        <description>auth - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sun, 08 Jan 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/auth/" rel="self" type="application/rss+xml" /><item>
+    <title>Yii2 basic login auth with database</title>
+    <link>https://jhuei.com/yii2-basic-auth-login/</link>
+    <pubDate>Sun, 08 Jan 2023 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/yii2-basic-auth-login/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/yii2-basic-auth-login/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>使用MySQL完成Yii2 app basic專案登入範例</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

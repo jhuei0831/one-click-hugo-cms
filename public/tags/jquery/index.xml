@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>JQuery - 標籤 - Jhuei Yummy</title>
+        <link>https://jhuei.com/tags/jquery/</link>
+        <description>JQuery - 標籤 - Jhuei Yummy</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sun, 10 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jhuei.com/tags/jquery/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel Backend Control Website - 8</title>
+    <link>https://jhuei.com/laravel-myweb-8/</link>
+    <pubDate>Sun, 10 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-8/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 頁面管理 - Page Manager</p>
+</blockquote>]]></description>
+</item><item>
+    <title>Laravel Backend Control Website - 7</title>
+    <link>https://jhuei.com/laravel-myweb-7/</link>
+    <pubDate>Tue, 05 May 2020 00:00:00 &#43;0000</pubDate><author>
+                    <name>Kerwin</name>
+                </author><guid>https://jhuei.com/laravel-myweb-7/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-myweb-7/feature.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>Laravel 拖曳排序、視圖合成器 - Drag Sort、View Composer</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

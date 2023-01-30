@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Laravel Backend Control Website - 10 - Jhuei Yummy</title><meta name="Description" content="執行後產生LOG資料 -Generate LOG Data After Execution"><meta property="og:title" content="Laravel Backend Control Website - 10" />
+<meta property="og:description" content="執行後產生LOG資料 -Generate LOG Data After Execution" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jhuei.com/laravel-myweb-10/" /><meta property="og:image" content="https://jhuei.com/laravel-myweb-10/feature.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-05-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-31T00:00:00+00:00" /><meta property="og:site_name" content="Jhuei Yummy" />
+<meta property="og:see_also" content="https://jhuei.com/laravel-myweb-1/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-2/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-3/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-4/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-5/" /><meta property="og:see_also" content="https://jhuei.com/laravel-myweb-6/" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jhuei.com/laravel-myweb-10/feature.jpg"/>
+<meta name="twitter:title" content="Laravel Backend Control Website - 10"/>
+<meta name="twitter:description" content="執行後產生LOG資料 -Generate LOG Data After Execution"/>
+<meta name="application-name" content="Jhuei Yummy">
+<meta name="apple-mobile-web-app-title" content="Jhuei Yummy">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jhuei.com/laravel-myweb-10/" /><link rel="prev" href="https://jhuei.com/laravel-myweb-9/" /><link rel="next" href="https://jhuei.com/laravel-myweb-11/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel Backend Control Website - 10",
+        "inLanguage": "zh-tw",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jhuei.com\/laravel-myweb-10\/"
+        },"genre": "posts","keywords": "laravel, php, html, javascript, log, htmlpurifier","wordcount":  2457 ,
+        "url": "https:\/\/jhuei.com\/laravel-myweb-10\/","datePublished": "2020-05-31T00:00:00+00:00","dateModified": "2020-05-31T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"authors": [{
+                        "@type": "Person",
+                        "name": "Kerwin"                    
+                    }],"description": "執行後產生LOG資料 -Generate LOG Data After Execution"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fas fa-file-alt'></i> 文章 </a><a class="menu-item" href="/tags/"><i class='fas fa-tag'></i> 標籤 </a><a class="menu-item" href="/categories/"><i class='fas fa-list'></i> 分類 </a><a class="menu-item" href="/series/"><i class='fas fa-folder'></i> 系列 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切換主題">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切換主題">
+                        <option value="light">淺色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟隨系統</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Jhuei Yummy">𝙅𝙃𝙐𝙀𝙄</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜尋文章標題或内容..." id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜尋">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fas fa-file-alt'></i>文章</a><a class="menu-item" href="/tags/" title=""><i class='fas fa-tag'></i>標籤</a><a class="menu-item" href="/categories/" title=""><i class='fas fa-list'></i>分類</a><a class="menu-item" href="/series/" title=""><i class='fas fa-folder'></i>系列</a><a href="#" class="menu-item theme-select" title="切換主題">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切換主題">
+                    <option value="light">淺色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟隨系統</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目錄</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-取得使用者資訊">1. 取得使用者資訊</a></li>
+    <li><a href="#2-修改migration">2. 修改Migration</a></li>
+    <li><a href="#3-修改model">3. 修改Model</a></li>
+    <li><a href="#4-加入路由">4. 加入路由</a></li>
+    <li><a href="#5-建立視圖">5. 建立視圖</a></li>
+    <li><a href="#6-log-首頁">6. Log 首頁</a></li>
+    <li><a href="#7-取得使用者資訊">7. 取得使用者資訊</a></li>
+    <li><a href="#8-寫入log">8. 寫入Log</a></li>
+    <li><a href="#9-詳細資料">9. 詳細資料</a></li>
+    <li><a href="#10-結語">10. 結語</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Laravel Backend Control Website - 10</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://jhuei.com/authors/kerwin'>Kerwin</a></span>
+                </span>&nbsp;<span class="post-category">收錄於 </span>&nbsp;<span class="post-category">類別 <a href="/categories/code/"><i class="far fa-folder fa-fw"></i>CODE</a></span>&nbsp;<span class="post-category">和</span>&nbsp;<span class="post-series">系列 <a href="/series/laravel-myweb/"><i class="far fa-list-alt fa-fw"></i>Laravel Backend Control Website</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-31">2020-05-31</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-05-31">2020-05-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;約 2457 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;預計閱讀 5 分鐘&nbsp;</div>
+        </div><div class="details series-nav open">
+                                <div class="details-summary series-title">
+                                    <span>系列 - Laravel Backend Control Website</span>
+                                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                                </div>
+                                <div class="details-content series-content">
+                                    <nav>
+                                        <ul>
+                                                    <li><a href="/laravel-myweb-1/">Laravel Backend Control Website - 1</a></li>
+                                                    <li><a href="/laravel-myweb-2/">Laravel Backend Control Website - 2</a></li>
+                                                    <li><a href="/laravel-myweb-3/">Laravel Backend Control Website - 3</a></li>
+                                                    <li><a href="/laravel-myweb-4/">Laravel Backend Control Website - 4</a></li>
+                                                    <li><a href="/laravel-myweb-5/">Laravel Backend Control Website - 5</a></li>
+                                                    <li><a href="/laravel-myweb-6/">Laravel Backend Control Website - 6</a></li>
+                                                    <li><a href="/laravel-myweb-7/">Laravel Backend Control Website - 7</a></li>
+                                                    <li><a href="/laravel-myweb-8/">Laravel Backend Control Website - 8</a></li>
+                                                    <li><a href="/laravel-myweb-9/">Laravel Backend Control Website - 9</a></li><li><span class="active">Laravel Backend Control Website - 10</span></li>
+                                                    <li><a href="/laravel-myweb-11/">Laravel Backend Control Website - 11</a></li>
+                                                    <li><a href="/laravel-myweb-12/">Laravel Backend Control Website - 12</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目錄</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-取得使用者資訊">1. 取得使用者資訊</a></li>
+    <li><a href="#2-修改migration">2. 修改Migration</a></li>
+    <li><a href="#3-修改model">3. 修改Model</a></li>
+    <li><a href="#4-加入路由">4. 加入路由</a></li>
+    <li><a href="#5-建立視圖">5. 建立視圖</a></li>
+    <li><a href="#6-log-首頁">6. Log 首頁</a></li>
+    <li><a href="#7-取得使用者資訊">7. 取得使用者資訊</a></li>
+    <li><a href="#8-寫入log">8. 寫入Log</a></li>
+    <li><a href="#9-詳細資料">9. 詳細資料</a></li>
+    <li><a href="#10-結語">10. 結語</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>執行後產生LOG資料 -Generate LOG Data After Execution</p>
+</blockquote>
+<h2 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>Hello 大家，</p>
+<p>在執行新增、修改、刪除等動作後，必須要記錄改變後的資料以及誰進行操作，這樣出狀況才方便了解誰做出這麼偉大的事情。</p>
+<hr>
+<h2 id="1-取得使用者資訊" class="headerLink">
+    <a href="#1-%e5%8f%96%e5%be%97%e4%bd%bf%e7%94%a8%e8%80%85%e8%b3%87%e8%a8%8a" class="header-mark"></a>1. 取得使用者資訊</h2><p>首先，先建立一個 <code>LOG</code> 的model :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// 一次性建立
+</span></span><span class="line"><span class="cl">php artisan make:model Log -mcr
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="2-修改migration" class="headerLink">
+    <a href="#2-%e4%bf%ae%e6%94%b9migration" class="header-mark"></a>2. 修改Migration</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Schema</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">CreateLogsTable</span> <span class="k">extends</span> <span class="nx">Migration</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Schema</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">bigIncrements</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;使用者&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;ip&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;使用者IP&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;os&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;作業系統&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;瀏覽器&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;browser_detail&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;瀏覽器詳細資料&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;action&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;動作&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;資料表&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">comment</span><span class="p">(</span><span class="s1">&#39;資料&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Schema</span><span class="o">::</span><span class="na">dropIfExists</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="3-修改model" class="headerLink">
+    <a href="#3-%e4%bf%ae%e6%94%b9model" class="header-mark"></a>3. 修改Model</h2><p><code>Log.php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Model</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Log</span> <span class="k">extends</span> <span class="nx">Model</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;logs&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$primaryKey</span> <span class="o">=</span> <span class="s1">&#39;id&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">protected</span> <span class="nv">$fillable</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;ip&#34;</span><span class="p">,</span> <span class="s2">&#34;os&#34;</span><span class="p">,</span> <span class="s2">&#34;browser&#34;</span><span class="p">,</span> <span class="s2">&#34;browser_detail&#34;</span><span class="p">,</span> <span class="s2">&#34;action&#34;</span><span class="p">,</span> <span class="s2">&#34;table&#34;</span><span class="p">,</span> <span class="s2">&#34;data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="4-加入路由" class="headerLink">
+    <a href="#4-%e5%8a%a0%e5%85%a5%e8%b7%af%e7%94%b1" class="header-mark"></a>4. 加入路由</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">prefix</span><span class="p">(</span><span class="s1">&#39;manage&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">,</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="k">function</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Route</span><span class="o">::</span><span class="na">resource</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="s1">&#39;LogController&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="5-建立視圖" class="headerLink">
+    <a href="#5-%e5%bb%ba%e7%ab%8b%e8%a6%96%e5%9c%96" class="header-mark"></a>5. 建立視圖</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">views/
+</span></span><span class="line"><span class="cl">├── _layouts/
+</span></span><span class="line"><span class="cl">├── _partials/
+</span></span><span class="line"><span class="cl">├── auth/
+</span></span><span class="line"><span class="cl">└── manage/  
+</span></span><span class="line"><span class="cl">    └── log/
+</span></span><span class="line"><span class="cl">        ├── detail.blade.php
+</span></span><span class="line"><span class="cl">        └── index.blade.php
+</span></span><span class="line"><span class="cl">    └── member/  
+</span></span><span class="line"><span class="cl">    └── navbar/  
+</span></span><span class="line"><span class="cl">    └── page/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="6-log-首頁" class="headerLink">
+    <a href="#6-log-%e9%a6%96%e9%a0%81" class="header-mark"></a>6. Log 首頁</h2><p><code>index.blade.php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">@</span><span class="k">extends</span><span class="p">(</span><span class="s1">&#39;_layouts.manage.app&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">@</span><span class="nx">section</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Log&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Manage&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="o">@</span><span class="nx">section</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;container-fluid&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;row justify-content-center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;col-md-12&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;card&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;card-header&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Log&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Manage&#39;</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;card-body&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;table-responsive&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">table</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;data&#34;</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;table table-hover table-bordered text-center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="o">&lt;</span><span class="nx">thead</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">tr</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;table-info active&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">th</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;text-nowrap text-center&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Member&#39;</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">th</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">th</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;text-nowrap text-center&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;IP&#39;</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">th</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">th</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;text-nowrap text-center&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Browser&#39;</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">th</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">th</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;text-nowrap text-center&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Action&#39;</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">th</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">th</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;text-nowrap text-center&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Table&#39;</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">th</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">th</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;text-nowrap text-center&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Created_at&#39;</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">th</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">th</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;text-nowrap text-center&#34;</span><span class="o">&gt;*&lt;/</span><span class="nx">th</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="o">&lt;/</span><span class="nx">thead</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="o">&lt;</span><span class="nx">tbody</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">@</span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$logs</span> <span class="k">as</span> <span class="nv">$log</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nv">$log</span><span class="o">-&gt;</span><span class="na">user</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nv">$log</span><span class="o">-&gt;</span><span class="na">ip</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nv">$log</span><span class="o">-&gt;</span><span class="na">browser</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nv">$log</span><span class="o">-&gt;</span><span class="na">action</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nv">$log</span><span class="o">-&gt;</span><span class="na">table</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nv">$log</span><span class="o">-&gt;</span><span class="na">created_at</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">           <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&#34;{% raw %}{{ route(&#39;log.show&#39;,</span><span class="si">$log-&gt;id</span><span class="s2">) }}{% endraw %}&#34;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&#34;GET&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">           <span class="o">@</span><span class="nx">csrf</span>
+</span></span><span class="line"><span class="cl">           <span class="p">{</span><span class="o">%</span> <span class="nx">raw</span> <span class="o">%</span><span class="p">}{{</span> <span class="nx">App\Button</span><span class="o">::</span><span class="na">detail</span><span class="p">(</span><span class="nv">$log</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">)</span> <span class="p">}}{</span><span class="o">%</span> <span class="nx">endraw</span> <span class="o">%</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">           <span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">@</span><span class="k">endforeach</span>
+</span></span><span class="line"><span class="cl">       <span class="o">&lt;/</span><span class="nx">tbody</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;/</span><span class="nx">table</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&#34;card-footer pagination justify-content-center table-responsive&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span><span class="o">!!</span> <span class="nv">$logs</span><span class="o">-&gt;</span><span class="na">links</span><span class="p">(</span><span class="s2">&#34;pagination::bootstrap-4&#34;</span><span class="p">)</span> <span class="o">!!</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">@</span><span class="nx">endsection</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>LogController.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">App\Log</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LogController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$logs</span> <span class="o">=</span> <span class="nx">Log</span><span class="o">::</span><span class="na">orderby</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">,</span><span class="s1">&#39;desc&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">paginate</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;manage.log.index&#39;</span><span class="p">,</span><span class="nx">compact</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="7-取得使用者資訊" class="headerLink">
+    <a href="#7-%e5%8f%96%e5%be%97%e4%bd%bf%e7%94%a8%e8%80%85%e8%b3%87%e8%a8%8a" class="header-mark"></a>7. 取得使用者資訊</h2><p><code>Log.php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get_agent</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$user_agent</span> <span class="o">=</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_USER_AGENT&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_USER_AGENT&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$browser_name</span> <span class="o">=</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$platform</span> <span class="o">=</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$version</span> <span class="o">=</span> <span class="nv">$ub</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 取得作業系統資訊
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/linux/i&#39;</span><span class="p">,</span> <span class="nv">$user_agent</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$platform</span> <span class="o">=</span> <span class="s1">&#39;linux&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/macintosh|mac os x/i&#39;</span><span class="p">,</span> <span class="nv">$user_agent</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$platform</span> <span class="o">=</span> <span class="s1">&#39;mac&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/windows|win32/i&#39;</span><span class="p">,</span> <span class="nv">$user_agent</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$platform</span> <span class="o">=</span> <span class="s1">&#39;windows&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 取得瀏覽器資訊
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">((</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/MSIE/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">)</span> <span class="o">||</span> <span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/Trident\/7.0; rv:11.0/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/Opera/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$browser_name</span> <span class="o">=</span> <span class="s1">&#39;Internet Explorer&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ub</span> <span class="o">=</span> <span class="s2">&#34;MSIE&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/Firefox/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$browser_name</span> <span class="o">=</span> <span class="s1">&#39;Mozilla Firefox&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ub</span> <span class="o">=</span> <span class="s2">&#34;Firefox&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/Chrome/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$browser_name</span> <span class="o">=</span> <span class="s1">&#39;Google Chrome&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ub</span> <span class="o">=</span> <span class="s2">&#34;Chrome&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/Safari/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$browser_name</span> <span class="o">=</span> <span class="s1">&#39;Apple Safari&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ub</span> <span class="o">=</span> <span class="s2">&#34;Safari&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/Opera/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$browser_name</span> <span class="o">=</span> <span class="s1">&#39;Opera&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ub</span> <span class="o">=</span> <span class="s2">&#34;Opera&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/Netscape/i&#39;</span><span class="p">,</span><span class="nv">$user_agent</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$browser_name</span> <span class="o">=</span> <span class="s1">&#39;Netscape&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ub</span> <span class="o">=</span> <span class="s2">&#34;Netscape&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 瀏覽器版本
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nv">$known</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Version&#39;</span><span class="p">,</span> <span class="nv">$ub</span><span class="p">,</span> <span class="s1">&#39;other&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pattern</span> <span class="o">=</span> <span class="s1">&#39;#(?&lt;browser&gt;&#39;</span><span class="o">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="nv">$known</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;)[/ ]+(?&lt;version&gt;[0-9.|a-zA-Z.]*)#&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">preg_match_all</span><span class="p">(</span><span class="nv">$pattern</span><span class="p">,</span> <span class="nv">$user_agent</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// we have no matching number just continue
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// see how many we have
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nv">$i</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nv">$matches</span><span class="p">[</span><span class="s1">&#39;browser&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//we will have two since we are not using &#39;other&#39; argument yet
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//see if version is before or after the name
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="nx">strripos</span><span class="p">(</span><span class="nv">$user_agent</span><span class="p">,</span><span class="s2">&#34;Version&#34;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nx">strripos</span><span class="p">(</span><span class="nv">$user_agent</span><span class="p">,</span><span class="nv">$ub</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$version</span> <span class="o">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$version</span> <span class="o">=</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$matches</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$version</span> <span class="o">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// check if we have a number
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nv">$version</span> <span class="o">==</span> <span class="k">null</span> <span class="o">||</span> <span class="nv">$version</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$version</span> <span class="o">=</span> <span class="s2">&#34;Unknown&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$browser_name</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="nv">$version</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;platform&#39;</span> <span class="o">=&gt;</span> <span class="nv">$platform</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;detail&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user_agent</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="8-寫入log" class="headerLink">
+    <a href="#8-%e5%af%ab%e5%85%a5log" class="header-mark"></a>8. 寫入Log</h2><p><code>Log.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Database\Eloquent\Model</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Auth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\DB</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Request</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Log</span> <span class="k">extends</span> <span class="nx">Model</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">write_log</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span><span class="nv">$data</span><span class="p">,</span><span class="nv">$action</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$agent</span> <span class="o">=</span> <span class="nx">Log</span><span class="o">::</span><span class="na">get_agent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">())[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;ip&#39;</span>   <span class="o">=&gt;</span> <span class="nx">Request</span><span class="o">::</span><span class="na">ip</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;os&#39;</span>   <span class="o">=&gt;</span> <span class="nv">$agent</span><span class="p">[</span><span class="s1">&#39;platform&#39;</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;browser&#39;</span>   <span class="o">=&gt;</span> <span class="nv">$agent</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;browser_detail&#39;</span>   <span class="o">=&gt;</span> <span class="nv">$agent</span><span class="p">[</span><span class="s1">&#39;detail&#39;</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;action&#39;</span>   <span class="o">=&gt;</span> <span class="nv">$action</span> <span class="o">??</span> <span class="nx">Request</span><span class="o">::</span><span class="na">method</span><span class="p">(),</span> 
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;table&#39;</span>   <span class="o">=&gt;</span> <span class="nv">$table</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;data&#39;</span>   <span class="o">=&gt;</span> <span class="nx">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_UNESCAPED_UNICODE</span> <span class="o">|</span> <span class="nx">JSON_PRETTY_PRINT</span> <span class="o">|</span> <span class="nx">JSON_UNESCAPED_SLASHES</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;created_at&#39;</span>   <span class="o">=&gt;</span> <span class="nx">now</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>第13行為進行了何種動作，新增修改或其他。</li>
+<li>第15行為新增修改刪除等寫入影響資料庫的資料，使用 <code>json</code> 的方式儲存。</li>
+</ul>
+<p>最後在 <code>Controller</code>中引入 <code>Log.php</code> 後就可以使用 <code>write_log()</code> 的方式寫入LOG。</p>
+<p>使用 <code>MemberController.php</code> 新增會員當範例  :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Auth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Hash</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Validator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\DB</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">App\User</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">App\Log</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MemberController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;max:255&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;max:255&#39;</span><span class="p">,</span> <span class="s1">&#39;unique:users&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;min:1&#39;</span><span class="p">,</span> <span class="s1">&#39;confirmed&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;permission&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;max:5&#39;</span><span class="p">,</span> <span class="s1">&#39;min:0&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">except</span><span class="p">(</span><span class="s1">&#39;_token&#39;</span><span class="p">,</span><span class="s1">&#39;_method&#39;</span><span class="p">,</span><span class="s1">&#39;password_confirmation&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">filled</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nv">$key</span> <span class="o">==</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">password</span> <span class="o">=</span> <span class="nx">Hash</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elseif</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">filled</span><span class="p">(</span><span class="nv">$key</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$user</span><span class="o">-&gt;</span><span class="nv">$key</span> <span class="o">=</span> <span class="nx">strip_tags</span><span class="p">(</span><span class="nx">clean</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="nv">$key</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 寫入log
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">Log</span><span class="o">::</span><span class="na">write_log</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">back</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span><span class="s1">&#39;會員新增成功 !&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="o">...</span><span class="nx">略</span><span class="o">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>第11行引入 <code>Log</code> model</li>
+<li>第38行寫入log，影響的資料表為<code>users</code></li>
+</ul>
+<p>實際操作一次新增會員並確認是否產生LOG。</p>
+<figure><a class="lightgallery" href="https://i.imgur.com/OuBdopp.png" title="https://i.imgur.com/OuBdopp.png" data-thumbnail="https://i.imgur.com/OuBdopp.png" data-sub-html="<h2>log</h2>">
+        <img
+            
+            loading="lazy"
+            src="https://i.imgur.com/OuBdopp.png"
+            srcset="https://i.imgur.com/OuBdopp.png, https://i.imgur.com/OuBdopp.png 1.5x, https://i.imgur.com/OuBdopp.png 2x"
+            sizes="auto"
+            alt="https://i.imgur.com/OuBdopp.png">
+    </a><figcaption class="image-caption">log</figcaption>
+    </figure>
+<hr>
+<h2 id="9-詳細資料" class="headerLink">
+    <a href="#9-%e8%a9%b3%e7%b4%b0%e8%b3%87%e6%96%99" class="header-mark"></a>9. 詳細資料</h2><p>上圖可以看到有一個 <code>Detail</code> 的按鈕，用來看被寫入資料庫的資料。</p>
+<p>修改 <code>LogController.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$log</span> <span class="o">=</span> <span class="nx">Log</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="nv">$id</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;manage.log.detail&#39;</span><span class="p">,</span><span class="nx">compact</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>detail.blade.php</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">@extends(&#39;_layouts.manage.app&#39;)
+</span></span><span class="line"><span class="cl">@section(&#39;title&#39;, __(&#39;Log&#39;).__(&#39;Detail&#39;))
+</span></span><span class="line"><span class="cl">@section(&#39;content&#39;)
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container-fluid&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;row justify-content-center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-md-12&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-header&#34;</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Log&#39;).__(&#39;Detail&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>               
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;list-unstyled&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{% raw %}{{ App\Button::GoBack(route(&#39;log.index&#39;)) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;table-responsive&#34;</span><span class="p">&gt;</span>     
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;table table-hover table-bordered&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;table-info active&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-nowrap text-center&#34;</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Item&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-nowrap text-center&#34;</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Data&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Member&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;user }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;IP&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;ip }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Operating system&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;os }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Browser&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;browser }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Browser&#39;).__(&#39;Detail&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;browser_detail }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Action&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;action }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Table&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;table }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Data&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;data }}{% endraw %}<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ __(&#39;Created_at&#39;) }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{% raw %}{{ $log-&gt;created_at }}{% endraw %}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-footer&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">@endsection
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>現在只要點 <code>Detail</code> 按鈕後就可以看到以下畫面 :</p>
+<figure><a class="lightgallery" href="https://i.imgur.com/Xqg3TGL.png" title="https://i.imgur.com/Xqg3TGL.png" data-thumbnail="https://i.imgur.com/Xqg3TGL.png" data-sub-html="<h2>detail</h2>">
+        <img
+            
+            loading="lazy"
+            src="https://i.imgur.com/Xqg3TGL.png"
+            srcset="https://i.imgur.com/Xqg3TGL.png, https://i.imgur.com/Xqg3TGL.png 1.5x, https://i.imgur.com/Xqg3TGL.png 2x"
+            sizes="auto"
+            alt="https://i.imgur.com/Xqg3TGL.png">
+    </a><figcaption class="image-caption">detail</figcaption>
+    </figure>
+<p>其中資料欄位就是新增會員所寫入的資料。</p>
+<hr>
+<h2 id="10-結語" class="headerLink">
+    <a href="#10-%e7%b5%90%e8%aa%9e" class="header-mark"></a>10. 結語</h2><p>叮叮結束🚗</p>
+<p>這裡有一個問題，可以看到在 <code>detail</code> 的資料部分，<code>&quot;password&quot;: &quot;Pa$$w0rd!&quot;</code> ，</p>
+<p>表示你剛剛輸入的密碼沒有被 <code>hash</code> 處理到，這是因為上面控制器寫入LOG使用的是 <code>$request-&gt;all()</code> ，</p>
+<p><code>$request-&gt;all()</code> 是處理前的資料，只要改成 <code>Log::write_log('users',$user);</code> 問題即可解決。</p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新於 2020-05-31</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/laravel-myweb-10/index.md target="_blank" rel="noopener noreferrer">閱讀原始文檔</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="https://jhuei.com/laravel-myweb-10/" data-title="Laravel Backend Control Website - 10" data-hashtags="laravel,php,html,javascript,log,htmlpurifier"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="https://jhuei.com/laravel-myweb-10/" data-hashtag="laravel"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://jhuei.com/laravel-myweb-10/" data-title="Laravel Backend Control Website - 10" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="https://jhuei.com/laravel-myweb-10/" data-title="Laravel Backend Control Website - 10"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="https://jhuei.com/laravel-myweb-10/" data-title="Laravel Backend Control Website - 10"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="https://jhuei.com/laravel-myweb-10/" data-title="Laravel Backend Control Website - 10" data-description="執行後產生LOG資料 -Generate LOG Data After Execution"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="https://jhuei.com/laravel-myweb-10/" data-title="Laravel Backend Control Website - 10" data-description="執行後產生LOG資料 -Generate LOG Data After Execution"><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="https://jhuei.com/laravel-myweb-10/" data-title="Laravel Backend Control Website - 10"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/laravel/">laravel</a>,&nbsp;<a href="/tags/php/">php</a>,&nbsp;<a href="/tags/html/">html</a>,&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/log/">log</a>,&nbsp;<a href="/tags/htmlpurifier/">htmlpurifier</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主頁</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/laravel-myweb-9/" class="prev" rel="prev" title="Laravel Backend Control Website - 9"><i class="fas fa-angle-left fa-fw"></i>Laravel Backend Control Website - 9</a>
+            <a href="/laravel-myweb-11/" class="next" rel="next" title="Laravel Backend Control Website - 11">Laravel Backend Control Website - 11<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Jhuei</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到頂部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看評論">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"複製到剪貼簿","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本網站使用 Cookies 來改善您的瀏覽體驗."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"沒有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>
